@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8'>
+	<title>Courses</title>
+	<link rel='stylesheet' type='text/css' media='screen' href='course.css'>
+	<!-- unicon css-->
+	<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	<script src='course.js' defer></script>
+</head>
+
+<body>
+
+	<nav class="primary_nav_list">
+		<i class="uil uil-bars menu_item_icon" id="menu_item_icon"></i>
+		<a href="#" class="logo">Courses</a>
+		<ul class="nav_links">
+			<i class="uil uil-times menu_close_icon" id="menu_close_icon"></i>
+			<li><a href="#">Home</a></li>
+			<li><a href="#" active>Courses</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		<i class="uil uil-search search-icons" id="search_icon"></i>
+		<div class="search-bar">
+			<i class="uil uil-search search-icons"></i>
+			<input type="text" placeholder="Search here..">
+		</div>
+	</nav>
+	<section id="image_Table_container">
+		<section id="image_container">
+			<h2>Courses list</h2>
+		</section>
+		<section id="filter_contanier">
+			<h3>
+				Filters
+			</h3>
+			<div class="check_box_Container">
+				<input type="checkbox" name="option1" value="Postgraduate" id="option1">
+				<label for="option1">Postgraduate</label>
+
+				<input type="checkbox" name="option2" value="Undergraduate" id="option2">
+				<label for="option2">Undergraduate</label>
+			</div>
+			<div class="radio_btn_Container">
+				<form>
+					<label>
+					  <input type="radio" name="group1" value="option1" id="rd_btn_1" checked>
+					  UK
+					</label>
+					<label>
+					  <input type="radio" name="group1" value="option2" id="rd_btn_2">
+					  Euro
+					</label>
+					<label>
+					  <input type="radio" name="group1" value="option3" id="rd_btn_3">
+					  Dollar
+					</label>
+				  </form>
+			</div>
+		</section>
+		<div id="main-content">
+			<main class="table_container">
+				<section class="table_body">
+					<table id="course_Tbl">
+						<tbody id="courseDetailsBody">
+
+						</tbody>
+					</table>
+				</section>
+				<div id="pagination"></div>
+			</main>
+		</div>
+	</section>
+	<footer>
+
+	</footer>
+</body>
+
+</html>

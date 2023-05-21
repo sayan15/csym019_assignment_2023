@@ -1,0 +1,90 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "course",
+    "description": "Course List",
+    "type": "object",
+    "properties": {
+        "counties": {
+            "type": "array",
+            "items": {
+                "name": {
+                    "type": "string"
+                },
+                "image": {
+                    "type":"string"
+                },
+                "subject_area": {
+                    "type": "string"
+                },
+                "level": {
+                    "type": "string"
+                },
+                "duration": {
+                    "type": "string"
+                },
+                "Starting": {
+                    "type": "object",
+                    "properties": {
+                        "january": {
+                            "type": "boolean"
+                        },
+                        "september": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "location": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "distance": {
+                            "type": "boolean"
+                        }
+                    }
+                },
+                "fees": {
+                    "type": "object",
+                    "properties": {
+                        "UK": {
+                            "type": "string"
+                        },
+                        "US": {
+                            "type": "string"
+                        },
+                        "EURO": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "details": {
+                    "type": "string"
+                },
+                "modules": {
+                    "type": "array",
+                    "items": {
+                        "module_code": {
+                            "type": "string"
+                        },
+                        "module_title": {
+                            "type": "string"
+                        },
+                        "credits": {
+                            "type": "string"
+                        },
+                        "semester": {
+                            "type": "string"
+                        },
+                        "description": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "entry_requirements": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

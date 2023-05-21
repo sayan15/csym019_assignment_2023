@@ -1,0 +1,430 @@
+{
+    "courses": [
+        {
+            "name": "Accounting and Finance (Top-Up) MSc",
+            "image": "assets/logo.png",
+            "subject_area": "ACCOUNTING AND FINANCE",
+            "level": "Postgraduate",
+            "duration": "1 Year",
+            "Starting": {
+                "january": true,
+                "september": true
+            },
+            "location": {
+                "name": "online",
+                "distance": true
+            },
+            "fees": {
+                "UK": "£2355",
+                "US": "$2926",
+                "EURO": "€2634"
+            },
+            "details": "This programme will broaden your specialist knowledge previously gained at a professional level, turning leading qualifications like ACCA into a recognised masters degree. In particular the module, ‘Accounting & finance research project’ guides you to research into the key challenges accounting and finance professionals face in the industry. This module aims to equip accounting and finance professionals with the necessary skills to undertake independent project work within a business context. The Research Methods element provides you with an introduction to research, types of research methodology, formulating and planning a research project, data collection, analysis and presentation of research findings based upon an actual industry specific or corporate focused topic.",
+            "modules": [
+                {
+                    "module_code": "ACC7024",
+                    "module_title": "Advanced Financial Reporting",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module builds on your existing knowledge of financial reporting, examining advanced topics such as group accounts, financial instruments and foreign currency translation."
+                },
+                {
+                    "module_code": "ACC7025",
+                    "module_title": "Advanced Management Accounting",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module focuses on the use of accounting information for managerial decision-making, exploring advanced techniques such as activity-based costing, transfer pricing and performance measurement."
+                },
+                {
+                    "module_code": "ACC7026",
+                    "module_title": "Corporate Finance",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module provides an in-depth understanding of the principles and practices of corporate finance, covering topics such as capital budgeting, cost of capital, and capital structure decisions."
+                },
+                {
+                    "module_code": "ACC7027",
+                    "module_title": "Corporate Governance and Ethics",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module examines the role of corporate governance and ethics in ensuring the integrity and accountability of organisations, exploring key issues such as board structure, executive compensation, and social responsibility."
+                },
+                {
+                    "module_code": "ACC7028",
+                    "module_title": "Research Methods for Accounting and Finance",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module provides you with the skills and knowledge needed to undertake research in accounting and finance, covering topics such as research design, data collection and analysis, and academic writing."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of a second class honours degree or equivalent.",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.5 or equivalent."
+            ]
+        },
+        {
+            "name": "Advertising and Digital Marketing BA (Hons)",
+            "image": "assets/logo.png",
+            "subject_area": "ADVERTISING AND MARKETING",
+            "level": "Undergraduate",
+            "duration": "3 Year",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "Northampton",
+                "distance": true
+            },
+            "fees": {
+                "UK": "£2355",
+                "US": "$2926",
+                "EURO": "€2634"
+            },
+            "details": "The advertising industry has been transformed by the digital and social media revolution. From start-ups to big businesses, from social enterprises to charities and the public sector, this discipline offers careers in a wide range of industry sectors.Experiences are at the heart of our advertising degree. As well as regular guest speakers and industry visits, we work on real projects with real marketing budgets. We operate as a marketing department from the first year. Typically, you will be set a brief and then develop and pitch your concept. You will work within brand guidelines, often appointing suppliers, like photographers or design agencies, to deliver your project.",
+            "modules": [
+                {
+                    "module_code": "ADV1011",
+                    "module_title": "Introduction to Advertising",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module will introduce you to the fundamental principles of advertising, examining the key concepts and theories that underpin the industry."
+                },
+                {
+                    "module_code": "DMK1011",
+                    "module_title": "Introduction to Digital Marketing",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module will introduce you to the core principles of digital marketing, including website design, search engine optimisation, social media and mobile marketing."
+                },
+                {
+                    "module_code": "ADV2021",
+                    "module_title": "Advertising Creativity and Innovation",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module will develop your understanding of advertising creativity, exploring the creative process and the role of innovation in advertising."
+                },
+                {
+                    "module_code": "DMK2011",
+                    "module_title": "Social Media Marketing",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module will explore the role of social media in marketing, examining how social media platforms can be used to engage with consumers and promote products and services."
+                },
+                {
+                    "module_code": "ADV3031",
+                    "module_title": "Advertising and Society",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module will examine the social, cultural and ethical issues surrounding advertising, exploring the impact of advertising on society and the role of regulation in the industry."
+                },
+                {
+                    "module_code": "DMK3021",
+                    "module_title": "Mobile Marketing",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module will examine the role of mobile marketing in the digital age, exploring the use of mobile devices to reach and engage with consumers."
+                }
+            ],
+            "entry_requirements": [
+                "UCAS tariff points: 104-120",
+                "A-Level: BCC-BBC",
+                "BTEC: DMM-DMP",
+                "IB Diploma: 28-30 points",
+                "Applicants are expected to hold GCSE English and Maths at Grade 4 or above."
+            ]
+        },
+        {
+            "name": "Architectural Technology BSc (Hons)",
+            "image": "assets/logo.png",
+            "subject_area": "ART AND DESIGN",
+            "level": "Undergraduate",
+            "duration": "3 Year",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "Waterside",
+                "distance": true
+            },
+            "fees": {
+                "UK": "£9250",
+                "US": "$11491",
+                "EURO": "€10349"
+            },
+            "details": "The Architectural Technology degree at UON brings together project management, design and technical skills. During our Architectural Technology course, you’ll become prepared to deliver projects all the way from concept stage. You’ll learn and increase your knowledge of the industry and legislation, experience realistic projects and develop your creative skills. This Architectural Technology course is accredited by the Chartered Institute of Architectural Technologists (CIAT), meaning you will be eligible for CIAT student membership and will be exempt from some modules that are required in the Professional and Occupational Performance record. Many of our graduates gain professional recognition from CIAT after they graduate, by pursuing the various stages of professional recognition.",
+            "modules": [
+                {
+                    "module_code": "ARC4001",
+                    "module_title": "Design Studio 1: Introduction to Architectural Technology",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module introduces the fundamental principles of architectural technology and design, exploring topics such as site analysis, building materials, and construction techniques."
+                },
+                {
+                    "module_code": "ARC4002",
+                    "module_title": "Building Technology 1: Structures and Materials",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module provides an understanding of the structural and material components of buildings, including foundations, walls, and roofs."
+                },
+                {
+                    "module_code": "ARC4003",
+                    "module_title": "Design Studio 2: Residential Design",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module explores the design of residential buildings, examining issues such as space planning, environmental sustainability, and regulatory compliance."
+                },
+                {
+                    "module_code": "ARC4004",
+                    "module_title": "Building Technology 2: Services and Environmental Design",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module focuses on the building services and environmental design aspects of architectural technology, covering topics such as heating, ventilation, and lighting."
+                },
+                {
+                    "module_code": "ARC4005",
+                    "module_title": "Design Studio 3: Commercial Design",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module explores the design of commercial buildings, such as offices and retail spaces, addressing issues such as accessibility, security, and branding."
+                },
+                {
+                    "module_code": "ARC4006",
+                    "module_title": "Building Technology 3: Regulations and Performance",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module provides an understanding of the regulatory requirements and performance standards that govern the design and construction of buildings, such as building codes and energy efficiency ratings."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of 112 UCAS tariff points from a maximum of four subjects, which should include a relevant subject such as art, design or technology.",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.0 or equivalent."
+            ]
+        },
+        {
+            "name": "Molecular Bioscience MSc",
+            "image": "assets/logo.png",
+            "subject_area": "BIOLOGICAL SCIENCES",
+            "level": "Postgraduate",
+            "duration": "1 Year",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "Waterside",
+                "distance": true
+            },
+            "fees": {
+                "UK": "£8010",
+                "US": "$9950",
+                "EURO": "€8961"
+            },
+            "details": "With specific pathways in Genetics and Genomics or Molecular Medicine.The Molecular Bioscience MSc has two distinct and separate pathways of study allowing you to focus on Molecular Medicine or Genetics and Genomics. You can elect to take study topics in your chosen area of interest and it allows you to design your molecular bioscience Master’s degree to meet your career aspirations.To apply for the Molecular Medicine route, please click the Apply Now button. To apply for the Genetics and Genomics pathway, please click below.",
+            "modules": [
+                {
+                    "module_code": "BMS4001",
+                    "module_title": "Principles of Molecular Bioscience",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module covers the fundamental principles of molecular bioscience, including topics such as DNA structure and function, protein synthesis and regulation, and genetic engineering techniques."
+                },
+                {
+                    "module_code": "BMS4002",
+                    "module_title": "Advanced Topics in Molecular Biology",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module explores advanced topics in molecular biology, including gene expression regulation, epigenetics, and molecular mechanisms of disease."
+                },
+                {
+                    "module_code": "BMS4003",
+                    "module_title": "Bioinformatics and Systems Biology",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module introduces bioinformatics and systems biology approaches to molecular bioscience, covering topics such as sequence analysis, network analysis, and computational modelling."
+                },
+                {
+                    "module_code": "BMS4004",
+                    "module_title": "Research Methods in Molecular Bioscience",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module provides training in research methods and techniques used in molecular bioscience, including experimental design, data analysis, and laboratory safety."
+                },
+                {
+                    "module_code": "BMS4005",
+                    "module_title": "Molecular Techniques and Applications",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module covers the practical skills required for molecular bioscience research, including DNA extraction and analysis, protein expression and purification, and cell culture techniques."
+                },
+                {
+                    "module_code": "BMS4006",
+                    "module_title": "Molecular Bioscience Project",
+                    "credits": "60",
+                    "semester": "3",
+                    "description": "This module involves the completion of a research project in a molecular bioscience topic of the student's choice, under the supervision of a faculty member."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of a 2:2 honours degree in a relevant subject such as biology, biochemistry or biomedical sciences.",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.5 or equivalent."
+            ]
+        },
+        {
+            "name": "BSc (Hons) in Artificial Intelligence and Data Science",
+            "image": "assets/logo.png",
+            "subject_area": "Computer Science",
+            "level": "Undergraduate",
+            "duration": "4 Year",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "Waterside",
+                "distance": false
+            },
+            "fees": {
+                "UK": "£14750",
+                "US": "$9950",
+                "EURO": "€8961"
+            },
+            "details": "This course is designed to provide you with the knowledge and skills to work with data and build intelligent systems using modern Artificial Intelligence (AI) techniques.\n\nYou will learn how to develop machine learning models to analyse and make predictions from data, as well as how to build intelligent agents that can interact with the world and make decisions. You will also gain a solid understanding of the mathematical and computational foundations of AI, as well as the ethical and societal issues related to the development and deployment of intelligent systems.\n\nDuring the course, you will work on a range of practical projects and have the opportunity to collaborate with businesses and organisations on real-world AI and data science problems. You will also have access to state-of-the-art facilities, including dedicated AI and data science labs equipped with cutting-edge hardware and software.",
+            "modules": [
+                {
+                    "module_code": "AI4001",
+                    "module_title": "Introduction to Artificial Intelligence and Data Science",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module introduces the fundamental principles and concepts of artificial intelligence and data science, including machine learning, natural language processing, computer vision, and big data analytics."
+                },
+                {
+                    "module_code": "DS4002",
+                    "module_title": "Data Structures and Algorithms",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module covers the design and analysis of data structures and algorithms used in data science and artificial intelligence. Topics include data structures such as arrays, linked lists, and trees, as well as algorithms such as sorting and searching. Students will also gain practical experience with algorithm design and analysis through programming assignments and projects."
+                },
+                {
+                    "module_code": "ML4003",
+                    "module_title": "Machine Learning",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module covers the fundamental principles and algorithms of machine learning, including supervised and unsupervised learning, decision trees, neural networks, and deep learning. Students will also gain practical experience with machine learning techniques through programming assignments and projects."
+                },
+                {
+                    "module_code": "NLP4004",
+                    "module_title": "Natural Language Processing",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module covers the principles and techniques of natural language processing, including text processing, sentiment analysis, machine translation, and speech recognition. Students will also gain practical experience with natural language processing techniques through programming assignments and projects."
+                },
+                {
+                    "module_code": "CV4005",
+                    "module_title": "Computer Vision",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module covers the principles and techniques of computer vision, including image processing, feature extraction, object recognition, and deep learning for computer vision. Students will also gain practical experience with computer vision techniques through programming assignments and projects."
+                },
+                {
+                    "module_code": "BDCC4006",
+                    "module_title": "Big Data and Cloud Computing",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module covers the principles and techniques of big data analytics and cloud computing, including distributed computing, data storage and retrieval, and cloud platforms. Students will also gain practical experience with big data and cloud computing technologies through programming assignments and projects."
+                },
+                {
+                    "module_code": "IS4007",
+                    "module_title": "Intelligent Systems",
+                    "credits": "20",
+                    "semester": "4",
+                    "description": "This module covers the design and development of intelligent systems, including rule-based systems, expert systems, fuzzy logic, and genetic algorithms. Students will also gain practical experience with intelligent system design and development through programming assignments and projects."
+                },
+                {
+                    "module_code": "RP4008",
+                    "module_title": "Research Project",
+                    "credits": "40",
+                    "semester": "4",
+                    "description": "This module provides students with the opportunity to undertake an independent research project in a topic related to artificial intelligence and data science"
+                }
+            ],
+            "entry_requirements": [
+                "a_levels 112 UCAS points from at least two A-levels or equivalent qualifications, including a grade C or above in Mathematics or Computing",
+                "gcse GCSE English Language and Mathematics at grade C/4 or above (or equivalent)",
+                "mature_applicants Mature applicants without formal qualifications will be considered on a case-by-case basis"
+            ]
+        },
+        {
+            "name": "Criminal and Corporate Investigation BA (Hons)",
+            "image": "assets/logo.png",
+            "subject_area": "CRIMINOLOGY, LAW, AND POLICING",
+            "level": "Undergraduate",
+            "duration": "3 years",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "Waterside",
+                "distance": false
+            },
+            "fees": {
+                "UK": "£14750",
+                "US": "$9250",
+                "EURO": "€8961"
+            },
+            "details": "Our Criminal and Corporate Investigation course has been designed and developed with input from leading investigation, intelligence, security and financial specialists. Throughout your criminal investigation degree studies, you will develop the necessary industry standard skills and experience to carry out professional investigations to the highest level within commercial, public or criminal justice settings.",
+            "modules": [
+                {
+                    "module_code": "CC7001",
+                    "module_title": "Criminal Law",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module provides an introduction to the principles of criminal law, including the elements of a crime, criminal liability, and defences. Students will also learn about the criminal justice system and the role of criminal law in society."
+                },
+                {
+                    "module_code": "CC7002",
+                    "module_title": "Policing and Investigation",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module covers the principles and practices of policing and investigation, including the role of the police in society, investigative techniques, and the use of technology in policing and investigation."
+                },
+                {
+                    "module_code": "CC7003",
+                    "module_title": "Corporate Law and Governance",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module provides an introduction to the principles of corporate law and governance, including the legal framework for companies, directors' duties, and corporate social responsibility. Students will also learn about the ethical and social implications of corporate behaviour."
+                },
+                {
+                    "module_code": "CC7004",
+                    "module_title": "Financial Investigation and Forensic Accounting",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module covers the principles and practices of financial investigation and forensic accounting, including fraud detection and prevention, money laundering, and the use of financial analysis in investigations. Students will also learn about the legal and ethical considerations of financial investigation and forensic accounting."
+                },
+                {
+                    "module_code": "CC7005",
+                    "module_title": "Investigative Interviewing and Interpersonal Skills",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module focuses on the development of investigative interviewing and interpersonal skills, including communication, rapport building, and active listening. Students will also learn about the ethical and legal considerations of investigative interviewing."
+                },
+                {
+                    "module_code": "CC7006",
+                    "module_title": "Digital and Cybercrime Investigation",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module covers the principles and practices of digital and cybercrime investigation, including cybercrime prevention, digital forensics, and the use of technology in investigations. Students will also learn about the legal and ethical considerations of digital and cybercrime investigation."
+                }
+            ],
+            "entry_requirements": [
+                "112 UCAS tariff points",
+                "GCSE English Language and Mathematics at grade C/4 or above",
+                "International students: IELTS 6.0 overall with no element lower than 5.5 or equivalent"
+            ]
+        }
+    ]
+}
