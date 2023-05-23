@@ -1,3 +1,11 @@
+<?php
+session_start();
+session_destroy();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include 'mainFunctions.php'; // include the PHP file that processes the form
+}
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,13 +22,13 @@
         </header>
         <nav>
             <ul>
-                <li><a href="./courseSelectionForm.html">Course Report</a></li>
+                <li><a href="./courseSelectionForm.php">Course Report</a></li>
                 <li><a href="./newCourse.php">New Course</a></li>
             </ul>
         </nav>
         <main>
             <h3 id="new_course_h3">New Course Entry Form</h3>
-            <form action="post">   
+            <form method="post" action="./mainFunctions.php">   
                 <div class="addmore">
                     <div class="inner_Blocks">
                         <label for="title">Title:</label>
@@ -89,10 +97,20 @@
                         
                     </div>
                     <div class="inner_btn"> 
-                        <input type="submit" value="Add Course" class="newCourseBtns"/>
+                        <input type="submit" value="Add Course" class="newCourseBtns" name="btn"/>
                     </div>
             </form>
         </main>
         <footer>&copy; CSYM019 2023</footer>
     </body>
 </html>
+
+<?php
+session_start();
+
+if (isset($_SESSION['error'])) {
+    $errorMessage = $_SESSION['error'];
+    echo "<script>alert('$errorMessage');</script>";
+    unset($_SESSION['error']); // Clear the session variable after displaying the alert
+}
+?>

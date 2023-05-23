@@ -13,9 +13,9 @@ function addModules(){
       //create input requirement name field
       var module = document.createElement("input");
       module.type = "text";
-      module.name = "requirement[]";
+      module.name = "module[]";
       module.required = true;
-      module.placeholder = "requirement";
+      module.placeholder = "module";
       div.appendChild(module);
     
       //create credit field

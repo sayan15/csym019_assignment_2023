@@ -3,7 +3,7 @@
 $host = 'db';
 $user_name = 'root';
 $pass = 'csym019';
-$schema= 'Internet_programming';
+$schema= 'Courses';
 
 global $pdo;
 try {
@@ -36,5 +36,74 @@ $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : "";
     $stmt->execute();
     return $stmt;
   }
+
+  // insert new record into database and handle ajax request
+ function insert($table, $record)
+ {
+       $keys = array_keys($record);
+       $values = implode(', ', $keys);
+       $valuesWithColon = implode(', :', $keys);
+       $query = 'INSERT INTO ' . $table . ' (' . $values . ') VALUES (:' . $valuesWithColon . ')';
+       $insert_stmt = $GLOBALS['pdo']->prepare($query);
+       $insert_stmt->execute($record);
+       return $insert_stmt;
+ 
+ }
+
+  //insert and get the id
+function insertAndgetId($table, $record)
+{
+      $keys = array_keys($record);
+      $values = implode(', ', $keys);
+      $valuesWithColon = implode(', :', $keys);
+      $query = 'INSERT INTO ' . $table . ' (' . $values . ') VALUES (:' . $valuesWithColon . ')';
+      
+      $insert_stmt = $GLOBALS['pdo']->prepare($query);
+      $insert_stmt->execute($record);
+      
+      $last_insert_id = $GLOBALS['pdo']->lastInsertId();
+     return $last_insert_id;
+
+}
+
+//fetch course record from database with where
+function fetchARecordWithOneWhereClause($table, $field, $value)
+{
+  $stmt = $GLOBALS['pdo']->prepare('SELECT * FROM ' . $table . ' WHERE ' . $field . ' = :value');
+  $criteria = [
+  'value' => $value
+  ];
+  $stmt->execute($criteria);
+  return $stmt;
+}
+
+
+
+//insert with where condition
+ function insertWhere($table, $field, $value, $record)
+{
+
+      $keys = array_keys($record);
+      $values = implode(', ', $keys);
+      $valuesWithColon = implode(', :', $keys);
+      $query = 'INSERT INTO ' . $table . ' (' . $values . ') VALUES (:' . $valuesWithColon . ') WHERE '.$field.' = '.$value.' ';
+      $insert_stmt = $GLOBALS['pdo']->prepare($query);
+      $insert_stmt->execute($record);
+      return $insert_stmt;
+
+}
+
+//delete course record from database and handle ajax request
+function deleteRecord($table, $field, $value)
+      {
+      
+        $stmt = $GLOBALS['pdo']->prepare('DELETE FROM ' . $table . ' WHERE ' . $field . ' = :value');
+        $criteria = [
+        'value' => $value
+        ];
+        $stmt->execute($criteria);
+        return $stmt;
+      
+}
 
   ?>
