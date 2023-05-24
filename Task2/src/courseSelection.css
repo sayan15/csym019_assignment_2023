@@ -1,0 +1,45 @@
+.addmore{
+    display: grid;
+
+    height: 100vh;
+}
+
+.table-container {
+    max-height: 80vh; /* Set the maximum height of the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+table{
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px gray;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+}
+thead{
+    box-shadow: 0 5px 10px gray;
+}
+
+th{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+td{
+    padding: 1rem 2rem;
+}
+
+.edit{
+    border-radius: 5px;
+    background-color: black;
+    padding: 0.2rem 1rem;
+    text-align: center;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: aliceblue;
+}

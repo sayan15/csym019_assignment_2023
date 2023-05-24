@@ -106,7 +106,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </html>
 
 <?php
-session_start();
 
 if (isset($_SESSION['error'])) {
     $errorMessage = $_SESSION['error'];

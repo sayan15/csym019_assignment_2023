@@ -1,0 +1,79 @@
+html, body { height: 100%; margin: 0; padding: 5px }
+
+main{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.table-container {
+    max-height: 400px; /* Set the maximum height of the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+table{
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px gray;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
+}
+thead{
+    box-shadow: 0 5px 10px gray;
+}
+
+th{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+td{
+    padding: 1rem 2rem;
+}
+
+.edit{
+    border-radius: 5px;
+    background-color: black;
+    padding: 0.2rem 1rem;
+    text-align: center;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: aliceblue;
+}
+
+.pie-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    max-height:350px ;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    width: 82%;
+    position: relative;
+    border: 1px solid black;
+}
+
+.pie-container h3 {
+    margin: 0;
+    padding: 10px;
+  }
+  
+  .pie-container canvas {
+    width: 100%;
+    height: calc(100% - 45px); /* Subtract the height of the h3 element */
+    padding: 10px;
+  }
+
+
+

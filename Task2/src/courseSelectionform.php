@@ -1,8 +1,15 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Course Report</title>
         <link rel="stylesheet" href="layout.css">
+        <link rel="stylesheet" href="courseSelection.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	    <script src='courseSelection.js' defer></script>
     </head>
     <body>
         <header>
@@ -15,31 +22,38 @@
             </ul>
         </nav>
         <main>
-            <h3>Sample Course Selection Form</h3>
-                <form action="./sampleReport.png" class="addmore">
-                    <div class="addmore">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Checkbox</th>
-                                    <th>Title</th>
-                                    <th>Overview</th>
-                                    <th>Higlights</th>
-                                    <th>Details</th>
-                                    <th>Fees Uk</th>
-                                    <th>Fees International</th>
-                                    <th>Modules</th>
-                                    <th>Entry Requirements</th>
-                                    <!-- Add more columns as needed -->
-                                </tr>
-                            </thead>
-                            <tbody> 
-                            </tbody>
-                        </table>
+            <h3>Course Selection Form</h3>
+            
+                <form action="report.php" method="post" class="addmore">
+                    <div class="table-container">
+                            <table id="course_Tbl">
+                                <thead>
+                                    <tr>
+                                        <th>Checkbox</th>
+                                        <th>Title</th>
+                                        <th>Overview</th>
+                                        <th>Higlights</th>
+                                        <th>Details</th>
+                                        <th>Fees Uk</th>
+                                        <th>Fees International</th>
+                                        <th>Modules</th>
+                                        <th>Entry Requirements</th>
+                                        <!-- Add more columns as needed -->
+                                    </tr>
+                                </thead>
+                                <tbody id="courseDetailsBody">
 
-                    </div>           
+
+                                </tbody>
+                            </table>
+                    </div>
+                    <div class="inner_btn"> 
+                        <input type="submit" value="Create Report" class="newCourseBtns" name="report_btn"/>
+                    </div>
+                           
                 </form>
         </main>
         <footer>&copy; CSYM019 2023</footer>
     </body>
 </html>
+

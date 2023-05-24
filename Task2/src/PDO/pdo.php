@@ -74,7 +74,8 @@ function fetchARecordWithOneWhereClause($table, $field, $value)
   'value' => $value
   ];
   $stmt->execute($criteria);
-  return $stmt;
+  $resultAll = $stmt->fetchAll();
+  return $resultAll;
 }
 
 
@@ -105,5 +106,17 @@ function deleteRecord($table, $field, $value)
         return $stmt;
       
 }
+
+//fetech all records
+function fetchAllRecordsWithFetchAll($table)
+{
+ $stmt = $GLOBALS['pdo']->prepare('SELECT * FROM ' . $table );
+ $stmt->execute();
+ $resultAll = $stmt->fetchAll();
+ return $resultAll;
+}
+
+
+
 
   ?>

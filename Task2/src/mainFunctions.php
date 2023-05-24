@@ -105,4 +105,38 @@ function addNewCourse(){
       }
 
 }
+
+//select which function to execute
+if (isset($_POST['action'])) {
+    switch ($_POST['action']) {
+        case 'allCourses':
+            allCourses();
+            
+            break;
+        case 'getModules':
+            $courseid = $_POST['courseid'];
+            getModules($courseid);
+            break;
+        }
+        
+}
+
+//get all course details
+function allCourses(){
+    //get course details
+    $result=fetchAllRecordsWithFetchAll("course_tbl");
+    $jsonResult = json_encode($result);
+
+
+   echo $jsonResult;
+}
+
+//get modules
+function getModules($courseId){
+    $result=fetchARecordWithOneWhereClause("modules_tbl","course_id",$courseId);
+    $jsonResult = json_encode($result);
+
+
+   echo $jsonResult;
+}
 ?>
