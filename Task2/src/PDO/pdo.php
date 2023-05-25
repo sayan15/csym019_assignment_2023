@@ -96,7 +96,7 @@ function fetchARecordWithOneWhereClause($table, $field, $value)
 
 //delete course record from database and handle ajax request
 function deleteRecord($table, $field, $value)
-      {
+{
       
         $stmt = $GLOBALS['pdo']->prepare('DELETE FROM ' . $table . ' WHERE ' . $field . ' = :value');
         $criteria = [

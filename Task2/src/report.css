@@ -51,12 +51,32 @@ tr:nth-child(even){
 }
 
 .pie-container{
+        display: flex;
+        justify-content: space-between;
+        margin: 5px;
+        max-height:350px ;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        width: 82%;
+        position: relative;
+        border: 1px solid black;
+    
+}
+
+.moudule-Table{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 5px;
-    max-height:350px ;
     padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     width: 82%;

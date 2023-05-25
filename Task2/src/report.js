@@ -8,6 +8,8 @@ $(document).ready(function () {
     let table = document.getElementById("course_Tbl");
     var barChartData = [];
     var coursetitles=[];
+    var ProccesedCourseCount=0;
+
     document.getElementById("courseDetailsBody").innerHTML = "";
     $.ajax({
         url: 'mainFunctions.php',
@@ -22,16 +24,13 @@ $(document).ready(function () {
 
             for (let i = 0; i < response.length; i++) {
                 if (courseIds.includes(response[i].id)) {
-                    //assign course title
-                    coursetitles[i]=response[i].title;
+
                     html += '<td>' + response[i].title + '</td>';
                     html += '<td>' + response[i].overview + '</td>';
                     html += '<td>' + response[i].higlights + '</td>';
                     html += '<td>' + response[i].details + '</td>';
                     html += '<td>' + response[i].fees_UK + '</td>';
-                    html += '<td>' + response[i].fees_international + '</td>';
-                    html += '<td><button class="edit" onclick="editModule(' + response[i].id + ')">Edit</button></td>';
-                    html += '<td><button class="edit" onclick="editReuirement(' + response[i].id + ')">Edit</button></td></tr>';
+                    html += '<td>' + response[i].fees_international + '</td></tr>';
 
                     //get modules
                     $.ajax({
@@ -43,28 +42,94 @@ $(document).ready(function () {
                             courseid: response[i].id
                         },
                         success: function (moduleResponse) {
+                            //assign course title
+
+                            coursetitles[ProccesedCourseCount]=response[i].title;
+                            //increment the processed courde count
+                            ProccesedCourseCount+=1;
                             var modules = [];
                             var credits = [];
                             //loop thorugh modules
                             for (let i = 0; i < moduleResponse.length; i++) {
                                 modules[i] = moduleResponse[i].module;
                                 credits[i] = moduleResponse[i].credit;
+                                //assign values for barchart
+                                var labelExists = false;
+                                var data={};
+                                //loop through data object
+                                for (var x = 0; x < data.length; x++) {
+                                    if (data[x].label === modules[i]) {
+                                        labelExists = true;
+                                        data[x].data.push(parseInt(credits[i])); // Append the new value to existing data array
+                                        break;
+                                    }
+                                }
+
+                                //loop through narchart array 
+                                if(labelExists===false){
+                                    for (var y = 0; y < barChartData.length; y++) {
+                                        var currentLabel = modules[i];
+                                    
+                                        // Check if label already exists
+                                        var existingIndex = barChartData.findIndex(obj => obj.label === currentLabel);
+                                    
+                                        if (existingIndex !== -1) {
+                                            // Append value to existing "data" array
+                                            barChartData[existingIndex].data[ProccesedCourseCount-1]=parseInt(credits[i]);
+                                            labelExists = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                                
+                                //if its new label create object
+                                var creditArray=[];
+                                creditArray[ProccesedCourseCount-1]=parseInt(credits[i]);
+                                if(labelExists===false){
+                                    data  = {
+                                        label: modules[i],
+                                        data: creditArray,
+                                        backgroundColor: [
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)',
+                                            'rgba(255, 206, 86, 0.2)',
+                                            'rgba(75, 192, 192, 0.2)',
+                                            'rgba(153, 102, 255, 0.2)',
+                                            'rgba(255, 159, 64, 0.2)',
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 99, 132, 1)',
+                                            'rgba(54, 162, 235, 1)',
+                                            'rgba(255, 206, 86, 1)',
+                                            'rgba(75, 192, 192, 1)',
+                                            'rgba(153, 102, 255, 1)',
+                                            'rgba(255, 159, 64, 1)',
+                                            'rgba(255, 99, 132, 0.2)',
+                                            'rgba(54, 162, 235, 0.2)'
+                                        ],
+                                        borderWidth: 1
+                                    }
+                                }
+
+                                
+                                // Check if label already exists
+                                 var existingIndex = barChartData.findIndex(obj => obj.label === currentLabel);
+                                    
+                                if (existingIndex === -1) {
+                                    //push the data to barchart array
+                                    barChartData.push(data);
+                                }
+                                
                             }
                             //load pie chat
                             loadPie(response[i].title, response[i].id, modules, credits);
-                            //assign values for barchart
-                            var data  = {
-                                label: modules,
-                                data: credits,
-                                backgroundColor: 'rgba(0, 123, 255, 0.5)', // Set desired color
-                                borderColor: 'rgba(0, 123, 255, 1)', 
-                                borderWidth: 1
-                            }
 
                             //selected courses and data assigened are equal then call bar chart
-                            barChartData.push(data);
+
                             console.log(JSON.stringify(barChartData));
-                            if (barChartData.length === courseIds.length) {
+                            if (courseIds.length===ProccesedCourseCount && courseIds.length>1) {
                                 barChart(coursetitles,barChartData);
                             }
                         },
@@ -93,25 +158,53 @@ $(document).ready(function () {
 
 );
 
+//create modules table
+function formModuleTable(title,div,modules, credits) {
+    //create inner container
+    var div2 = document.createElement("div");
+    div2.classList.add("moudule-Table");
 
+    var html = "";
+    html += '<h3>'+title+'</h3>' ;
+    html += '<table><thead><tr>' ;
+    html += '<th>Modules</th>';
+    html += '<th>Credits</th></tr></thead>';
+    html += '<tbody>' ;
+        //loop thorugh modules
+        for (let i = 0; i < modules.length; i++) {
+            html += '<tr><td>' + modules[i] + '</td>';
+            html += '<td>' + credits[i]+ '</td></tr>';
+        }
+    html += '</tbody>' ;
+    html += '</table>' ;
+    //append table
+    div2.innerHTML = html
+    //append pie chart
+    div.appendChild(div2);
+}
 //pie chart
-
-
 function loadPie(title, courseId, modules, credits) {
     //get modules container
     var container = document.getElementById("main_container");
     //create div and assign class
     var div = document.createElement("div");
     div.classList.add("pie-container");
-    //create Headind
-    var h3 = document.createElement("h3");
-    h3.textContent = title;
-    div.appendChild(h3);
+
+
+    //call module table creation
+    formModuleTable(title,div,modules, credits);
+
+    //create inner container
+    var div2 = document.createElement("div");
+    div2.classList.add("pie-chart");
 
     //create canvas
     var canvas = document.createElement("canvas");
     canvas.setAttribute("id", courseId);
-    div.appendChild(canvas);
+    div2.appendChild(canvas);
+    //append pie chart
+    div.appendChild(div2);
+    //div to cintainer
     container.appendChild(div);
 
     const ctx = document.getElementById(courseId);
@@ -143,7 +236,7 @@ function barChart(courses,barDataSet) {
     var container = document.getElementById("main_container");
     //create div and assign class
     var div = document.createElement("div");
-    div.classList.add("pie-container");
+    div.classList.add("bar-container");
     //create Headind
     var h3 = document.createElement("h3");
     h3.textContent = "Descriptive Data";
@@ -166,7 +259,14 @@ function barChart(courses,barDataSet) {
         options: {
             scales: {
                 y: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Credits',
+                        font: {
+                          weight: 'bold'
+                        }
+                      }
                 }
             }
         }

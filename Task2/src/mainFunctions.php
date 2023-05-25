@@ -26,7 +26,14 @@ function addNewCourse(){
       ];
       //check whether with same name course exist or not
     $result=fetchARecordWithOneWhereClause("course_tbl","title",$_POST['title']);
-    $row=$result->fetch(PDO::FETCH_ASSOC);
+    if($result)
+    {
+        $row=$result->fetch(PDO::FETCH_ASSOC);
+    }
+    else{
+        $row=0;
+    }
+    
       if($row>0){
         //navigate to newCourse.php
         session_start();
@@ -117,6 +124,10 @@ if (isset($_POST['action'])) {
             $courseid = $_POST['courseid'];
             getModules($courseid);
             break;
+        case 'deletCourse':
+            $courseid = $_POST['courseid'];
+            deletCourse($courseid);
+            break;
         }
         
 }
@@ -138,5 +149,11 @@ function getModules($courseId){
 
 
    echo $jsonResult;
+}
+
+//delete Course
+function deleteCourse($courseId){
+    $result=deleteRecord("course_tbl","id",$courseId);
+    return $result;
 }
 ?>

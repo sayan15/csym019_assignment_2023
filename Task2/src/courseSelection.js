@@ -46,15 +46,16 @@ function getDetails(response) {
                     html +='<td>' + response[i].details + '</td>';
                     html +='<td>' + response[i].fees_UK + '</td>';
                     html +='<td>' + response[i].fees_international + '</td>';
-                    html +='<td><button class="edit" onclick="editModule(' + response[i].id + ')">Edit</button></td>';
-                    html +='<td><button class="edit" onclick="editReuirement(' + response[i].id + ')">Edit</button></td></tr>';
+                    html +='<td><button class="edit" onclick="viewAll(' + response[i].id + ')">Edit</button></td>';
+                    html +='<td><button class="edit" value="' + response[i].id + '" name="course_delete">Delete</button></td></tr>';
                 }
                 
              document.getElementById("courseDetailsBody").innerHTML = html;
-
             }
 
         }
         )
 
     };
+
+

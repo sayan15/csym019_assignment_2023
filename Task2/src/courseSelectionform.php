@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Course Report</title>
+        <title>Course List</title>
         <link rel="stylesheet" href="layout.css">
         <link rel="stylesheet" href="courseSelection.css">
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -36,8 +36,8 @@
                                         <th>Details</th>
                                         <th>Fees Uk</th>
                                         <th>Fees International</th>
-                                        <th>Modules</th>
-                                        <th>Entry Requirements</th>
+                                        <th>More Details</th>
+                                        <th>Delete</th>
                                         <!-- Add more columns as needed -->
                                     </tr>
                                 </thead>

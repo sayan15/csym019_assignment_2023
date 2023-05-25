@@ -13,6 +13,13 @@
              }
 
         }
+    }else if(isset($_POST['course_delete'])){
+        $btnValue = $_POST['course_delete'];
+        require_once './mainFunctions.php';
+        deleteCourse($btnValue);
+        session_start();
+        header('Location: courseSelectionform.php');
+        exit;
     }
 ?>
 
@@ -42,8 +49,6 @@
                                 <th>Details</th>
                                 <th>Fees Uk</th>
                                 <th>Fees International</th>
-                                <th>Modules</th>
-                                <th>Entry Requirements</th>
                             </tr>
                         </thead>
                     <tbody id="courseDetailsBody">
