@@ -1,4 +1,15 @@
+<?php
+    session_start();
+    if(isset($_SESSION['userData'])){
+                    
+        //load the page
+    }
+    else{
+        header('Location: login.php');
+        exit;
+    }
 
+?>
 
 <!DOCTYPE html>
 <html>

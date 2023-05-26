@@ -69,6 +69,12 @@ tr:nth-child(even){
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    max-height: 300px; /* Set the maximum height of the table container */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+.moudule-Table td{
+    padding: 0.5rem 1rem;
 }
 
 .bar-container{

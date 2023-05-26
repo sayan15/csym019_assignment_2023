@@ -116,6 +116,14 @@ function fetchAllRecordsWithFetchAll($table)
  return $resultAll;
 }
 
+function hashPass($pass){
+  return password_hash($pass, PASSWORD_DEFAULT);
+}
+
+function passwordVerify($inputPass,$hashPass){
+  return password_verify($inputPass,$hashPass);
+}
+
 
 
 

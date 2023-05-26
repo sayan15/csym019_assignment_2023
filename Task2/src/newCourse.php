@@ -1,9 +1,17 @@
 <?php
-session_start();
-session_destroy();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include 'mainFunctions.php'; // include the PHP file that processes the form
-}
+    session_start();
+    if(isset( $_SESSION['userData'])){
+                        
+            //load the page
+    }
+    else{
+            header('Location: login.php');
+            exit;
+    }
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        include 'mainFunctions.php'; // include the PHP file that processes the form
+    }
 ?>
 
 <!DOCTYPE html>
