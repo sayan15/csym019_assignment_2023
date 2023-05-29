@@ -234,7 +234,7 @@ thead th{
 }
 
 tbody tr:nth-child(even){
-    background-color: #0000000b;
+    background-color: #4369790b;
 }
 
 tbody tr:hover{
@@ -278,8 +278,7 @@ select {
 }
 .course_icon{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 30px;
 }
 .icon{
     max-width: 200px;
@@ -304,13 +303,26 @@ select {
   }
   .details h3{margin: 10px;}
 
+  .entryRequirements h4{margin: 10px;}
+
   .details p{
     margin: 10px;
     text-align:justify;
     font-size: 1.0rem;
     font-weight: 200;
+    background-color: #fdffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
   }
 
+  .entryRequirements p{
+    margin: 10px;
+    text-align:justify;
+    font-size: 1.0rem;
+    font-weight: 200;
+  }
+  
   .icon_cat {
     display: flex;
     justify-content: center;

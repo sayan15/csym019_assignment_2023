@@ -1,4 +1,13 @@
 <?php
+    session_start();
+    if(isset( $_SESSION['userData'])){
+                        
+            //load the page
+    }
+    else{
+            header('Location: login.php');
+            exit;
+    }
 
     if(isset($_POST['report_btn'])) {
         $btnValue = $_POST['report_btn'];

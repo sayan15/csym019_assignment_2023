@@ -47,18 +47,29 @@
                         <textarea id="overview" name="overview" rows="4" cols="30" required></textarea>
                     </div>
                     <div class="inner_Blocks">
+                        <label for="level">Level:</label>
+                        <label>
+                            <input type="radio" name="level" value="Undergraduate" id="rd_btn_1" checked>
+                            Undergraduate
+                        </label>
+                        <label>
+                            <input type="radio" name="level" value="Postgraduate" id="rd_btn_2">
+                            Postgraduate
+                        </label>
+                    </div>
+                    <div class="inner_Blocks">
                         <label for="heighlights">Heighlights:</label>
                         <textarea id="heighlights" name="heighlights" rows="4" cols="30" required></textarea>
                     </div>
                     <div class="inner_Blocks_col">
-                        <label for="course_contents">Course Contents:</label><br>
+                        <label>Course Contents:</label><br>
                         <div class="inner_Blocks_content">
                             <label for="course_details">- Course details:</label><br>
                             <textarea id="course_details" name="course_details" rows="4" cols="30" required></textarea>
                         </div>
                         <div id="modulesContainer">
                             <div class="inner_Blocks_content">
-                                <label for="modules">- Modules:</label><br>
+                                <label for="module">- Modules:</label><br>
                                 <input type="text" id="module" name="module[]" required placeholder="module">
                                 <input type="number" id="credit" name="credit[]" required placeholder="credit">
                                 <button type="button" onclick="addModules()" >Add Module</button>
@@ -68,38 +79,38 @@
                     </div>
                     <div class="inner_Blocks_col">    
                         
-                        <label for="entry_requirements">Entry Requirements:</label><br>
+                        <label>Entry Requirements:</label><br>
                             <div id="requirementContainer">
                                 <div class="inner_Blocks_content">
-                                    <label for="entry_requirement"></label><br>
+                                    <label for="requirement"></label><br>
                                     <textarea id="requirement" name="requirement[]" rows="4" cols="30" required></textarea>
-                                    <button type="button" onclick="addRequirement()" >Add Requirement</button>
+                                    <button type="button" onclick="addRequirement()" id="addRequirementBtn">Add Requirement</button>
                                 </div>
                             </div>
                         
                     </div>
                     <div class="inner_Blocks">
-                        <label for="fee">Fee and Funding:</label>
+                        <label>Fee and Funding:</label>
                         <div id="feesContainer">
 
                                 <label for="uk">UK:</label><br>
                                 <input type="text" id="uk" name="uk" required placeholder="UK"><br>
                                 
 
-                                <label for="uk">International:</label><br>
+                                <label for="international">International:</label><br>
                                 <input type="text" id="international" name="international" required placeholder="international">
 
                         </div>
                     </div>
                     <div class="inner_Blocks_col">    
                         
-                        <label for="faqs">FAQs:</label><br>
+                        <label>FAQs:</label><br>
                             <div id="faqContainer">
                                 <div class="inner_Blocks_content">
-                                    <label for="faq"></label><br>
+                                    <label></label><br>
                                     <input type="text" id="question" name="question[]" required placeholder="question">
-                                    <input type="text" id="question" name="answer[]" required placeholder="answer">
-                                    <button type="button" onclick="addRequirement()" >Add FAQ</button>
+                                    <input type="text" id="answer" name="answer[]" required placeholder="answer">
+                                    <button type="button" onclick="addFaq()" >Add FAQ</button>
                                 </div>
                             </div>
                         
@@ -119,5 +130,17 @@ if (isset($_SESSION['error'])) {
     $errorMessage = $_SESSION['error'];
     echo "<script>alert('$errorMessage');</script>";
     unset($_SESSION['error']); // Clear the session variable after displaying the alert
+}
+
+if (isset($_SESSION['success'])) {
+    $Message = $_SESSION['success'];
+    if($Message){
+        echo "<script>alert('Course Registered Successfully');</script>";
+    }
+    else{
+        echo "<script>alert('Unable to register the course at the moment');</script>";
+    }
+    
+    unset($_SESSION['success']); // Clear the session variable after displaying the alert
 }
 ?>

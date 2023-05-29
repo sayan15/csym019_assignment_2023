@@ -65,6 +65,7 @@ function addRequirement(){
       // create delete button if we user want to delete those fields
       var requirementdeleteButton = document.createElement("button");
       requirementdeleteButton.type = "button";
+      requirementdeleteButton.id="addRequirementBtn"
       requirementdeleteButton.textContent = "Delete";
       requirementdeleteButton.addEventListener("click", function() {
         div.remove();
@@ -77,5 +78,43 @@ function addRequirement(){
 
 //add new faqs
 function addFaq(){
+        //get requirements container
+        var container=document.getElementById("faqContainer");
+        //create div and assign class
+        var div = document.createElement("div");
+          div.classList.add("inner_Blocks_content");
+          //create label 
+          var label = document.createElement("label");
+          label.textContent = "";
+          div.appendChild(label);
+          div.appendChild(document.createElement("br"));
     
+        //create input question field
+        var question = document.createElement("input");
+        question.type = "text";
+        question.name = "question[]";
+        question.required = true;
+        question.placeholder = "question";
+        div.appendChild(question);
+      
+        //create credit field
+        var answer = document.createElement("input");
+        answer.type = "text";
+        answer.name = "answer[]";
+        answer.required = true;
+        answer.placeholder = "answer";
+        div.appendChild(answer);
+          
+    
+          // create delete button if we user want to delete those fields
+          var deleteButton = document.createElement("button");
+          deleteButton.type = "button";
+          deleteButton.textContent = "Delete";
+          deleteButton.addEventListener("click", function() {
+            div.remove();
+          });
+    
+          div.appendChild(deleteButton);
+    
+          container.appendChild(div);
 }

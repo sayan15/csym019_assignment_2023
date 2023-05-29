@@ -13,6 +13,7 @@ if(isset($_POST['btn'])) {
     }
 }
 
+
 //function to add new course
 function addNewCourse(){
     $data = [
@@ -21,20 +22,14 @@ function addNewCourse(){
         "higlights"	=>$_POST['heighlights'],	
         "details"	=>$_POST['course_details'],	    		
         "fees_UK"=>$_POST['uk'],	
-        "fees_international"=>$_POST['international']
+        "fees_international"=>$_POST['international'],
+        "type"=> $_POST['level']
 
       ];
       //check whether with same name course exist or not
     $result=fetchARecordWithOneWhereClause("course_tbl","title",$_POST['title']);
-    if($result)
-    {
-        $row=$result->fetch(PDO::FETCH_ASSOC);
-    }
-    else{
-        $row=0;
-    }
     
-      if($row>0){
+      if($result){
         //navigate to newCourse.php
         session_start();
         $_SESSION['error'] = "course already exist ".$_POST['title'];
@@ -95,6 +90,30 @@ function addNewCourse(){
                 }
             }
 
+            // process faqs
+            $questions = $_POST['question'];
+            $answers = $_POST['answer'];
+            // Loop through the arrays to access the values
+            for ($i = 0; $i <count($questions); $i++) {
+                $question = $questions[$i];
+                $answer =  $answers[$i];
+                $data = [
+                    "course_id"=>$courseId,
+                    "question" => $question,
+                    "answer"=>$answer        
+                ];
+                $faqResult=insert("faq_tbl",$data);
+                if($faqResult!=true){
+                    //delete course details
+                    deleteRecord("course_tbl","id",$courseId);
+                    //navigate to newCourse.php
+                    session_start();
+                    $_SESSION['error'] = "unable to insert modules";
+                    header('Location: newCourse.php');
+                    exit;
+                }
+            }
+
             // navigate with success message
             session_start();
             $_SESSION['success'] = true;
@@ -124,6 +143,10 @@ if (isset($_POST['action'])) {
             $courseid = $_POST['courseid'];
             getModules($courseid);
             break;
+        case 'getRequirements':
+            $courseid = $_POST['courseid'];
+            getRequirements($courseid);
+            break;
         case 'deletCourse':
             $courseid = $_POST['courseid'];
             deletCourse($courseid);
@@ -145,6 +168,15 @@ function allCourses(){
 //get modules
 function getModules($courseId){
     $result=fetchARecordWithOneWhereClause("modules_tbl","course_id",$courseId);
+    $jsonResult = json_encode($result);
+
+
+   echo $jsonResult;
+}
+
+//get requirements
+function getRequirements($courseId){
+    $result=fetchARecordWithOneWhereClause("entry_req_tbl","course_id",$courseId);
     $jsonResult = json_encode($result);
 
 

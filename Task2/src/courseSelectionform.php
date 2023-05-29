@@ -35,19 +35,20 @@
         <main>
             <h3>Course Selection Form</h3>
             
-                <form action="report.php" method="post" class="addmore">
+                <form action="report.php" method="post" class="addmore" target="_blank">
                     <div class="table-container">
                             <table id="course_Tbl">
                                 <thead>
                                     <tr>
                                         <th>Checkbox</th>
                                         <th>Title</th>
+                                        <th>Level</th>
                                         <th>Overview</th>
                                         <th>Higlights</th>
                                         <th>Details</th>
                                         <th>Fees Uk</th>
                                         <th>Fees International</th>
-                                        <th>More Details</th>
+                                        <th>Entry Requirements</th>
                                         <th>Delete</th>
                                         <!-- Add more columns as needed -->
                                     </tr>

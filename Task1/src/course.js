@@ -123,11 +123,15 @@ function getDetails(response) {
         let table = document.getElementById("course_Tbl");
 
         var text2 = "";
+        var entryRequirement = "";
         //check whether number of rows and json response are equal otherwise update it
         if (response.courses.length != table.rows.length || feeType != pre_FeeType) {
             document.getElementById("courseDetailsBody").innerHTML = "";
             pre_FeeType = feeType;
             for (let i = 0; i < response.courses.length; i++) {
+                //make it blank 
+                entryRequirement = "";
+
                 if (response.courses[i].level === "Postgraduate") {
 
                     text2 = "Msc"
@@ -135,6 +139,10 @@ function getDetails(response) {
                 else {
 
                     text2 = "Bsc"
+                }
+                //check for entry requirements
+                for (let x = 0; x < response.courses[i].entry_requirements.length; x++) {
+                    entryRequirement+='<p>- ' + response.courses[i].entry_requirements[x] + '</p>';
                 }
                 html += '<tr><td><div class="row">';
                 html += '<div class="course_icon"><img src="' + response.courses[i].image + '" alt="course_icon" class="icon"></div>';
@@ -145,7 +153,12 @@ function getDetails(response) {
                 html += '<li><span class="icon_cat"><img src="assets/degree.png" alt="degree_icon" class="small_icon"><label>' + response.courses[i].level + '</label></span></li>';
                 html += '<li><span class="icon_cat"><img src="assets/trophy.png" alt="trophy_icon" class="small_icon"><label>' + text2 + '</label></span></li>';
                 html += '<li><span class="icon_cat"><label>' + 'Fees:- ' + '</label><label>' + response.courses[i].fees[feeType] + '</label></span></li>';
-                html += '</ul></div></div></td></tr>';
+                html += '<li><span class="icon_cat"><label>' + 'Number of modules:- ' + '</label><label>' + response.courses[i].modules.length + '</label></span></li>';
+                html += '</ul>';
+                html += '<div class="entryRequirements">';
+                html += '<h4>Entry Reuirements</h4>';
+                html += entryRequirement;
+                html +='</div></td></tr>'
             }
 
             document.getElementById("courseDetailsBody").innerHTML = html;

@@ -2,7 +2,7 @@
     "courses": [
         {
             "name": "Accounting and Finance (Top-Up) MSc",
-            "image": "assets/logo.png",
+            "image": "assets/AccountingFinanceMSC.png",
             "subject_area": "ACCOUNTING AND FINANCE",
             "level": "Postgraduate",
             "duration": "1 Year",
@@ -64,7 +64,7 @@
         },
         {
             "name": "Advertising and Digital Marketing BA (Hons)",
-            "image": "assets/logo.png",
+            "image": "assets/advertising.png",
             "subject_area": "ADVERTISING AND MARKETING",
             "level": "Undergraduate",
             "duration": "3 Year",
@@ -136,7 +136,7 @@
         },
         {
             "name": "Architectural Technology BSc (Hons)",
-            "image": "assets/logo.png",
+            "image": "assets/architecture.png",
             "subject_area": "ART AND DESIGN",
             "level": "Undergraduate",
             "duration": "3 Year",
@@ -205,7 +205,7 @@
         },
         {
             "name": "Molecular Bioscience MSc",
-            "image": "assets/logo.png",
+            "image": "assets/molecularScience.png",
             "subject_area": "BIOLOGICAL SCIENCES",
             "level": "Postgraduate",
             "duration": "1 Year",
@@ -274,7 +274,7 @@
         },
         {
             "name": "BSc (Hons) in Artificial Intelligence and Data Science",
-            "image": "assets/logo.png",
+            "image": "assets/AI.png",
             "subject_area": "Computer Science",
             "level": "Undergraduate",
             "duration": "4 Year",
@@ -358,7 +358,7 @@
         },
         {
             "name": "Criminal and Corporate Investigation BA (Hons)",
-            "image": "assets/logo.png",
+            "image": "assets/criminology.png",
             "subject_area": "CRIMINOLOGY, LAW, AND POLICING",
             "level": "Undergraduate",
             "duration": "3 years",
@@ -425,6 +425,316 @@
                 "GCSE English Language and Mathematics at grade C/4 or above",
                 "International students: IELTS 6.0 overall with no element lower than 5.5 or equivalent"
             ]
-        }
+        },
+        {
+            "name": "Business Management BSc",
+            "image": "assets/businessManagement.png",
+            "subject_area": "BUSINESS MANAGEMENT",
+            "level": "Undergraduate",
+            "duration": "3 Years",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "on-campus",
+                "distance": false
+            },
+            "fees": {
+                "UK": "£9250",
+                "US": "$11500",
+                "EURO": "€10350"
+            },
+            "details": "The Business Management BSc program equips students with a comprehensive understanding of key business principles and practices. Through a combination of theoretical knowledge and practical application, students develop the necessary skills to excel in various business environments. The program covers a wide range of subjects, including marketing, finance, human resources, operations management, and strategic management. Graduates of this program are well-prepared for careers in business administration, entrepreneurship, and management.",
+            "modules": [
+                {
+                    "module_code": "BUS101",
+                    "module_title": "Introduction to Business",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module provides an overview of the fundamentals of business, including key concepts, functions, and environments. Students develop an understanding of the various aspects of business operations and gain insights into the challenges and opportunities in the business world."
+                },
+                {
+                    "module_code": "BUS201",
+                    "module_title": "Marketing Management",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module explores the principles and techniques of marketing management, including market analysis, consumer behavior, branding, and promotional strategies. Students learn how to develop effective marketing strategies and understand the importance of marketing in driving business success."
+                },
+                {
+                    "module_code": "BUS301",
+                    "module_title": "Strategic Management",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module focuses on the strategic aspects of business management. Students learn how to analyze business environments, formulate strategic plans, and make informed decisions to achieve organizational goals. The module covers topics such as competitive analysis, strategic positioning, and strategic implementation."
+                },
+                {
+                    "module_code": "BUS401",
+                    "module_title": "Financial Management",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module provides an understanding of financial management principles and practices. Students learn how to analyze financial statements, make financial decisions, and manage financial resources effectively. The module covers topics such as financial planning, capital budgeting, and risk management."
+                },
+                {
+                    "module_code": "BUS501",
+                    "module_title": "Leadership and Organizational Behavior",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module explores the theories and concepts of leadership and organizational behavior. Students develop an understanding of effective leadership styles, motivation techniques, and team dynamics. The module also addresses organizational culture, change management, and ethical considerations in leadership."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of three A-levels or equivalent qualifications.",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.0 or equivalent."
+            ]
+        },
+        {
+            "name": "Computer Science MEng",
+            "image": "assets/computerScience.png",
+            "subject_area": "COMPUTER SCIENCE",
+            "level": "Postgraduate",
+            "duration": "4 Years",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "on-campus",
+                "distance": false
+            },
+            "fees": {
+                "UK": "£12,500",
+                "US": "$15,500",
+                "EURO": "€13,900"
+            },
+            "details": "The Computer Science MEng program offers advanced knowledge and practical skills in computer science. Students delve into topics such as programming, algorithms, data structures, artificial intelligence, and computer networks. The program emphasizes both theoretical foundations and hands-on experience, preparing graduates for careers in software development, data analysis, cybersecurity, and research. Through individual and group projects, students gain practical problem-solving abilities and the ability to adapt to the rapidly evolving field of computer science.",
+            "modules": [
+                {
+                    "module_code": "CSC101",
+                    "module_title": "Introduction to Programming",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module introduces students to the fundamentals of programming. Students learn a programming language and develop problem-solving skills by writing code to solve various computational problems. The module covers basic programming constructs, data types, and control structures."
+                },
+                {
+                    "module_code": "CSC201",
+                    "module_title": "Data Structures and Algorithms",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module focuses on the design and implementation of data structures and algorithms. Students learn how to efficiently store and manipulate data, analyze algorithm complexity, and solve real-world problems using appropriate data structures and algorithms."
+                },
+                {
+                    "module_code": "CSC301",
+                    "module_title": "Artificial Intelligence",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module explores the principles and applications of artificial intelligence. Students learn about various AI techniques, including machine learning, natural language processing, and computer vision. The module also addresses ethical considerations and societal impacts of AI."
+                },
+                {
+                    "module_code": "CSC401",
+                    "module_title": "Cybersecurity",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module focuses on the principles and practices of cybersecurity. Students learn about common cyber threats, vulnerabilities, and countermeasures. The module covers topics such as encryption, network security, secure coding practices, and incident response."
+                },
+                {
+                    "module_code": "CSC501",
+                    "module_title": "Big Data Analytics",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module introduces students to the field of big data analytics. Students learn how to process, analyze, and extract meaningful insights from large datasets. The module covers techniques such as data mining, machine learning, and visualization for effective data analysis."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of a second class honours degree in Computer Science or a related field.",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.5 or equivalent."
+            ]
+        },
+        {
+            "name": "Psychology BSc",
+            "image": "assets/Pschology.png",
+            "subject_area": "PSYCHOLOGY",
+            "level": "Undergraduate",
+            "duration": "3 Years",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "on-campus",
+                "distance": false
+            },
+            "fees": {
+                "UK": "£9250",
+                "US": "$11500",
+                "EURO": "€10350"
+            },
+            "details": "The Psychology BSc program offers a comprehensive understanding of human behavior and the mind. Students explore various subfields of psychology, including cognitive psychology, social psychology, developmental psychology, and abnormal psychology. Through a combination of theoretical knowledge and practical research experience, students develop critical thinking, analytical, and interpersonal skills. Graduates of this program are well-equipped for careers in counseling, research, human resources, and other fields that involve understanding and working with people.",
+            "modules": [
+                {
+                    "module_code": "PSY101",
+                    "module_title": "Introduction to Psychology",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module provides an overview of the key concepts, theories, and research methods in psychology. Students explore the biological, cognitive, and social factors that influence human behavior and learn about various psychological perspectives."
+                },
+                {
+                    "module_code": "PSY201",
+                    "module_title": "Cognitive Psychology",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module focuses on the study of mental processes, such as perception, attention, memory, and problem-solving. Students learn about cognitive theories and experimental methods used in cognitive psychology research."
+                },
+                {
+                    "module_code": "PSY301",
+                    "module_title": "Social Psychology",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module explores how individuals' thoughts, feelings, and behaviors are influenced by social interactions and group dynamics. Students examine topics such as attitudes, conformity, interpersonal relationships, and prejudice."
+                },
+                {
+                    "module_code": "PSY401",
+                    "module_title": "Developmental Psychology",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module focuses on the study of human development across the lifespan. Students explore physical, cognitive, and socioemotional development from infancy to late adulthood. The module covers topics such as language acquisition, moral development, and aging."
+                },
+                {
+                    "module_code": "PSY501",
+                    "module_title": "Abnormal Psychology",
+                    "credits": "20",
+                    "semester": "3",
+                    "description": "This module examines abnormal behavior and psychological disorders. Students learn about the classification, causes, and treatment of various psychological disorders, including mood disorders, anxiety disorders, and personality disorders."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of three A-levels or equivalent qualifications.",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.0 or equivalent."
+            ]
+        },
+        {
+            "name": "Environmental Science MSc",
+            "image": "assets/EnvironmentalScience.png",
+            "subject_area": "ENVIRONMENTAL SCIENCE",
+            "level": "Postgraduate",
+            "duration": "1 Year",
+            "Starting": {
+                "january": false,
+                "september": true
+            },
+            "location": {
+                "name": "on-campus",
+                "distance": false
+            },
+            "fees": {
+                "UK": "£11,500",
+                "US": "$14,300",
+                "EURO": "€12,800"
+            },
+            "details": "The Environmental Science MSc program provides a multidisciplinary approach to studying the environment and addressing environmental challenges. Students explore topics such as environmental sustainability, ecological systems, climate change, pollution control, and environmental policy. Through fieldwork, laboratory work, and research projects, students develop practical skills in environmental assessment, data analysis, and environmental management. Graduates of this program are prepared for careers in environmental consulting, resource management, government agencies, and non-profit organizations.",
+            "modules": [
+                {
+                    "module_code": "ENV701",
+                    "module_title": "Environmental Sustainability",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module examines the concepts of environmental sustainability and sustainable development. Students explore the principles and practices of sustainable resource management, conservation, and environmental policy."
+                },
+                {
+                    "module_code": "ENV702",
+                    "module_title": "Ecological Systems",
+                    "credits": "20",
+                    "semester": "1",
+                    "description": "This module focuses on the study of ecological systems and their interactions. Students learn about ecosystem dynamics, biodiversity, ecological modeling, and the impacts of human activities on ecosystems."
+                },
+                {
+                    "module_code": "ENV703",
+                    "module_title": "Climate Change and Mitigation",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module explores the causes and consequences of climate change and examines strategies for climate change mitigation. Students learn about climate change science, greenhouse gas emissions, renewable energy, and adaptation measures."
+                },
+                {
+                    "module_code": "ENV704",
+                    "module_title": "Environmental Pollution Control",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module addresses the sources, impacts, and control of environmental pollution. Students learn about air and water pollution, waste management, environmental monitoring, and pollution prevention techniques."
+                },
+                {
+                    "module_code": "ENV705",
+                    "module_title": "Environmental Policy and Management",
+                    "credits": "20",
+                    "semester": "2",
+                    "description": "This module examines the development and implementation of environmental policies and strategies. Students explore environmental legislation, stakeholder engagement, sustainable development goals, and the role of international organizations in environmental governance."
+                }
+            ],
+            "entry_requirements": [
+                "A minimum of a second class honours degree or equivalent in a related field (e.g., environmental science, geography, biology).",
+                "Applicants who do not have English as their first language must have an IELTS score of 6.5 or equivalent."
+            ]
+        },
+        {
+            "name": "Animation BA (Hons)",
+            "image": "assets/animationBA.png",
+            "subject_area": "Animation",
+            "level": "Undergraduate",
+            "duration": "3 Years",
+            "Starting": {
+            "january": false,
+            "september": true
+            },
+            "location": {
+            "name": "On-campus",
+            "distance": false
+            },
+            "fees": {
+            "UK": "£9,250",
+            "EU": "£13,750",
+            "International": "£13,750"
+            },
+            "details": "The Animation BA (Hons) program provides students with the knowledge and skills to excel in the field of animation. Through a combination of practical projects and theoretical studies, students learn various animation techniques, including 2D and 3D animation, stop motion, and digital effects. They develop a strong foundation in storytelling, character design, and animation principles. The course also covers industry-standard software and tools used in animation production. Students have access to state-of-the-art facilities and collaborate on projects to build their portfolio. Graduates can pursue careers in animation studios, film production companies, advertising agencies, and game development.",
+            "modules": [
+            {
+            "module_code": "ANM101",
+            "module_title": "Introduction to Animation",
+            "credits": "20",
+            "semester": "1",
+            "description": "This module provides an introduction to the fundamental principles and techniques of animation. Students learn about the history of animation, animation production processes, and basic animation software. They create short animated projects to develop their skills."
+            },
+            {
+            "module_code": "ANM201",
+            "module_title": "Character Design and Development",
+            "credits": "20",
+            "semester": "2",
+            "description": "This module focuses on the creation and development of animated characters. Students learn character design principles, anatomy, expressions, and personality development. They explore different styles and techniques to bring characters to life."
+            },
+            {
+            "module_code": "ANM301",
+            "module_title": "Advanced Animation Techniques",
+            "credits": "20",
+            "semester": "2",
+            "description": "This module explores advanced animation techniques and special effects. Students learn 3D animation, motion capture, visual effects, and compositing. They work on complex animation projects to enhance their technical skills."
+            },
+            {
+            "module_code": "ANM401",
+            "module_title": "Storyboarding and Narrative",
+            "credits": "20",
+            "semester": "3",
+            "description": "This module focuses on the art of storytelling in animation. Students learn storyboarding techniques, narrative structure, pacing, and shot composition. They develop their storytelling abilities and create compelling animated narratives."
+            },
+            {
+            "module_code": "ANM501",
+            "module_title": "Professional Practice in Animation",
+            "credits": "20",
+            "semester": "3",
+            "description": "This module prepares students for a career in the animation industry. They develop professional skills, learn about the business aspects of animation, and create a portfolio of their work. Students also have the opportunity to undertake industry placements or collaborative projects."
+            }
+            ],
+            "entry_requirements": [
+            "A minimum of three A-levels or equivalent qualifications.",
+            "Applicants may be required to submit a portfolio of their artwork demonstrating their creative skills and interest in animation."
+            ]
+            }
     ]
 }
