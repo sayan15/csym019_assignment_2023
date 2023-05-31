@@ -6,11 +6,12 @@ $(document).ready(function () {
     var html = "";
     var i = 0;
     let table = document.getElementById("course_Tbl");
-    var barChartData = [];
-    var coursetitles=[];
-    var ProccesedCourseCount=0;
+    var barChartData = [];//store the barchart dataset
+    var coursetitles=[];//store course titles to display in barchart
+    var ProccesedCourseCount=0;//store the count of how many courses has been so far processed
 
-    document.getElementById("courseDetailsBody").innerHTML = "";
+    document.getElementById("courseDetailsBody").innerHTML = "";//make the table body empty
+    //make ajax request to get all course details
     $.ajax({
         url: 'mainFunctions.php',
         dataType: 'json',
@@ -19,12 +20,13 @@ $(document).ready(function () {
         success: function (response) {
             console.log(response);
 
-            //make the table in ascending order
+            //make the table in ascending order using title
             response.sort((a, b) => a.title > b.title ? 1 : -1);
-
+            //loop throgh courses
             for (let i = 0; i < response.length; i++) {
+                //check whether to process only the user selected courses
                 if (courseIds.includes(response[i].id)) {
-
+                    //create table body
                     html += '<td>' + response[i].title + '</td>';
                     html += '<td>' + response[i].overview + '</td>';
                     html += '<td>' + response[i].higlights + '</td>';
@@ -32,7 +34,7 @@ $(document).ready(function () {
                     html += '<td>' + response[i].fees_UK + '</td>';
                     html += '<td>' + response[i].fees_international + '</td></tr>';
 
-                    //get modules
+                    //get modules for the specific selected courses using ajax request
                     $.ajax({
                         url: 'mainFunctions.php',
                         dataType: 'json',
@@ -45,37 +47,42 @@ $(document).ready(function () {
                             //assign course title
 
                             coursetitles[ProccesedCourseCount]=response[i].title;
-                            //increment the processed courde count
+                            //increment the processed course count
                             ProccesedCourseCount+=1;
-                            var modules = [];
-                            var credits = [];
+                            var modules = [];//store the modules
+                            var credits = [];//stores credits for that module
                             //loop thorugh modules
                             for (let i = 0; i < moduleResponse.length; i++) {
                                 modules[i] = moduleResponse[i].module;
                                 credits[i] = moduleResponse[i].credit;
-                                //assign values for barchart
+                                //assign values for barchartdat aset
                                 var labelExists = false;
-                                var data={};
-                                //loop through data object
+                                var data={};//object to store new module values for courses
+                                //loop through data array
                                 for (var x = 0; x < data.length; x++) {
+                                    //if the data object have that module already
                                     if (data[x].label === modules[i]) {
+                                        //make it as label already exist in the array
                                         labelExists = true;
-                                        data[x].data.push(parseInt(credits[i])); // Append the new value to existing data array
+
+                                        data[x].data.push(parseInt(credits[i])); // Append the new value to existing data array inside data object
                                         break;
                                     }
                                 }
 
-                                //loop through narchart array 
+                                //if the module was not exist in this course previously check for other courses have that module already
                                 if(labelExists===false){
+                                    //loop through barchart array 
                                     for (var y = 0; y < barChartData.length; y++) {
-                                        var currentLabel = modules[i];
+                                        var currentLabel = modules[i];//get currently what module we are processing
                                     
                                         // Check if label already exists
                                         var existingIndex = barChartData.findIndex(obj => obj.label === currentLabel);
-                                    
+                                        //if already exist
                                         if (existingIndex !== -1) {
-                                            // Append value to existing "data" array
+                                            // Append value to existing barChartData "data" array for the specific course using ProccesedCourseCount variable
                                             barChartData[existingIndex].data[ProccesedCourseCount-1]=parseInt(credits[i]);
+                                            //make labelExists  true
                                             labelExists = true;
                                             break;
                                         }
@@ -83,31 +90,19 @@ $(document).ready(function () {
                                 }
                                 
                                 //if its new label create object
-                                var creditArray=[];
-                                creditArray[ProccesedCourseCount-1]=parseInt(credits[i]);
-                                if(labelExists===false){
+                                var creditArray=[];//to store credit values for new module
+                                creditArray[ProccesedCourseCount-1]=parseInt(credits[i]);//assign values based on which course we are processing now
+                                if(labelExists===false){// if the module is no already exist
+                                    var randomColor = getRandomColor();//get the random color
+                                    //assign values to data object
                                     data  = {
                                         label: modules[i],
                                         data: creditArray,
                                         backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)',
-                                            'rgba(75, 192, 192, 0.2)',
-                                            'rgba(153, 102, 255, 0.2)',
-                                            'rgba(255, 159, 64, 0.2)',
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)'
+                                            randomColor
                                         ],
                                         borderColor: [
-                                            'rgba(255, 99, 132, 1)',
-                                            'rgba(54, 162, 235, 1)',
-                                            'rgba(255, 206, 86, 1)',
-                                            'rgba(75, 192, 192, 1)',
-                                            'rgba(153, 102, 255, 1)',
-                                            'rgba(255, 159, 64, 1)',
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)'
+                                            randomColor
                                         ],
                                         borderWidth: 1
                                     }
@@ -128,8 +123,10 @@ $(document).ready(function () {
 
                             //selected courses and data assigened are equal then call bar chart
 
-                            console.log(JSON.stringify(barChartData));
+                            console.log(JSON.stringify(barChartData));//for debugging purporse
+                            //check all the selected courses has been processed and number of slected course should be freater than 1
                             if (courseIds.length===ProccesedCourseCount && courseIds.length>1) {
+                                //call bar chart
                                 barChart(coursetitles,barChartData);
                             }
                         },
@@ -143,7 +140,7 @@ $(document).ready(function () {
 
 
             }
-
+            //assign table body
             document.getElementById("courseDetailsBody").innerHTML = html;
 
 
@@ -161,10 +158,10 @@ $(document).ready(function () {
 //create modules table
 function formModuleTable(title,div,modules, credits) {
     //create inner container
-    var div2 = document.createElement("div");
-    div2.classList.add("moudule-Table");
+    var div2 = document.createElement("div");//create div element
+    div2.classList.add("moudule-Table");//add class to div element
 
-    var html = "";
+    var html = "";//to store html elements
     html += '<h3>'+title+'</h3>' ;
     html += '<table><thead><tr>' ;
     html += '<th>Modules</th>';
@@ -172,8 +169,8 @@ function formModuleTable(title,div,modules, credits) {
     html += '<tbody>' ;
         //loop thorugh modules
         for (let i = 0; i < modules.length; i++) {
-            html += '<tr><td>' + modules[i] + '</td>';
-            html += '<td>' + credits[i]+ '</td></tr>';
+            html += '<tr><td>' + modules[i] + '</td>';//assign module name
+            html += '<td>' + credits[i]+ '</td></tr>';//assign credit value
         }
     html += '</tbody>' ;
     html += '</table>' ;
@@ -237,23 +234,22 @@ function barChart(courses,barDataSet) {
     //create div and assign class
     var div = document.createElement("div");
     div.classList.add("bar-container");
-    //create Headind
+    //create Heading
     var h3 = document.createElement("h3");
     h3.textContent = "Descriptive Data";
     div.appendChild(h3);
 
     //create canvas
     var canvas = document.createElement("canvas");
-    canvas.setAttribute("id", "barChart");
-    div.appendChild(canvas);
-    container.appendChild(div);
+    canvas.setAttribute("id", "barChart");//set id
+    div.appendChild(canvas);//append it to div
+    container.appendChild(div);//append it to main conatiner
 
     const ctx = document.getElementById('barChart').getContext('2d');
     var myChartConfig = {
         type: 'bar',
         data: {
             labels: courses,
-            /* The two datasets are given below as twi items in an array of json objects, i.e. [{}, {}]*/
             datasets: barDataSet
         },
         options: {
@@ -274,6 +270,15 @@ function barChart(courses,barDataSet) {
     const myChart = new Chart(ctx, myChartConfig);
 }
 
+//create random color
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';//store string value
+    var color = '#';
+    for (var i = 0; i < 6; i++) {//loop until i is less than 6
+      color += letters[Math.floor(Math.random() * 16)];//create hexadecimal color value
+    }
+    return color;
+  }
 
 
 

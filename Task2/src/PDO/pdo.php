@@ -7,12 +7,7 @@ $schema= 'Courses';
 
 global $pdo;
 try {
- $pdo = new PDO("mysql:host=$host; dbname=$schema;", $user_name, $pass);
-     $created = date("Y:m:d h:i:s");
-     // foreach ($createTables as $createTable) {
-     //       $success = $GLOBALS['pdo']->prepare($createTable);
-     //       $success->execute();
-     // }
+ $pdo = new PDO("mysql:host=$host; dbname=$schema;", $user_name, $pass);//create new pdo object
 } catch (PDOException $e) {
   echo "Error!: " . $e->getMessage() . "<br/>";
  //echo "Ooooops something bad happened";
@@ -22,12 +17,6 @@ try {
 $current_file  = $_SERVER['SCRIPT_NAME'];
 $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : "";
 
-  ///QUERY MADE EASY
-   function Query($query){
-       $stmt = $GLOBALS['pdo']->prepare($query);
-       $stmt->execute();
-       return $stmt;
-  }
 
   //select all record from table
   function fetchAllRecords($table)
@@ -37,7 +26,7 @@ $http_referer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : "";
     return $stmt;
   }
 
-  // insert new record into database and handle ajax request
+  // insert new record into database
  function insert($table, $record)
  {
        $keys = array_keys($record);
@@ -116,10 +105,12 @@ function fetchAllRecordsWithFetchAll($table)
  return $resultAll;
 }
 
+//hash the password
 function hashPass($pass){
   return password_hash($pass, PASSWORD_DEFAULT);
 }
 
+//verify the password with hash password
 function passwordVerify($inputPass,$hashPass){
   return password_verify($inputPass,$hashPass);
 }

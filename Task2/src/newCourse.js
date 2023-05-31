@@ -97,7 +97,7 @@ function addFaq(){
         question.placeholder = "question";
         div.appendChild(question);
       
-        //create credit field
+        //create answer field
         var answer = document.createElement("input");
         answer.type = "text";
         answer.name = "answer[]";

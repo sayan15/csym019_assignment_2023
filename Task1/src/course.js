@@ -7,8 +7,8 @@ const nav_searchbar = document.querySelector('.search-bar'),
     menu_close_icon = document.querySelector('#menu_close_icon')
     ;
 
-var feeType = "UK";
-var pre_FeeType = "";
+var feeType = "UK";// decide which fee type user is prefered
+var pre_FeeType = "";// previously which was selected
 
 //when serach icon click add new class call enable searcha and enable my hidden class and change my icon
 searchicon.addEventListener('click', () => {
@@ -32,69 +32,10 @@ menu_close_icon.addEventListener('click', () => {
     nav_list.classList.remove("enableMenu")
 })
 
-function getUniqueValuefromCoulmn() {
-    //create dictionary variable
-    var unique_val_dic = {}
-    var cellValue = ""
-    var allfilter = document.querySelectorAll('.table_filter')
-    allfilter.forEach((filter_i) => {
-        col_index = filter_i.parentElement.parentElement.getAttribute('col-index')
-        //get all the rows
-        const rows = document.querySelectorAll('#course_Tbl>tbody>tr')
 
-        rows.forEach((row) => {
-            cellValue = row.querySelector("td:nth-child(" + col_index + ")").innerHTML
-
-            if (col_index in unique_val_dic) {
-                //check already have that value
-                if (unique_val_dic[col_index].includes(cellValue)) {
-
-                } else {
-                    unique_val_dic[col_index].push(cellValue)
-                }
-            }
-            else {
-                unique_val_dic[col_index] = new Array(cellValue)
-            }
-        })
-
-        //update option value
-        var alreadyExist = false;
-        unique_val_dic[col_index].forEach((i) => {
-            if (filter_i.options.length >= 1) {
-                //loop through the existing options
-                for (let x = 0; x < filter_i.options.length; x++) {
-                    console.log(filter_i.options[x].value);
-                    console.log('Option value ' + i);
-                    //if its same already exist don't update
-                    if (filter_i.options[x].value === i) {
-                        console.log('Option with value ' + i + ' exists.');
-                        alreadyExist = true;
-                        break;
-                    }
-                    else {
-                        console.log('Option with value ' + i + 'not exist');
-                        alreadyExist = false;
-
-                    }
-
-                }
-                if (alreadyExist === false) {
-                    filter_i.innerHTML = filter_i.innerHTML + "\n <option value=" + i + ">" + i + "</option>"
-                }
-            } else {
-                filter_i.innerHTML = filter_i.innerHTML + "\n <option value=" + i + ">" + i + "</option>"
-            }
-
-        })
-    })
-}
-
-//load details
+//load details from json file
 let jsonVal;
 $(document).ready(function callBackFun() {
-
-
 
     setTimeout(function () {
         $.ajax({
@@ -103,9 +44,9 @@ $(document).ready(function callBackFun() {
             dataType: "json",
             success: function (response) {
                 jsonVal = response;
-                console.log("call again");
-                getDetails(response);
-                callBackFun();
+                console.log("call again");//for debugging purporse 
+                getDetails(response);// calling getDetails function again
+                callBackFun();// after success execution call the function agaian
             },
             error: function (xhr, status, error) {
                 console.log('Error:', error);
@@ -119,19 +60,19 @@ $(document).ready(function callBackFun() {
 //distribute the reponse of json to table values
 function getDetails(response) {
     $.each(response, function () {
-        var html = "";
+        var html = "";//to store the table body
         let table = document.getElementById("course_Tbl");
 
-        var text2 = "";
+        var text2 = "";// to store the course level msc or bsc
         var entryRequirement = "";
         //check whether number of rows and json response are equal otherwise update it
         if (response.courses.length != table.rows.length || feeType != pre_FeeType) {
-            document.getElementById("courseDetailsBody").innerHTML = "";
-            pre_FeeType = feeType;
-            for (let i = 0; i < response.courses.length; i++) {
+            document.getElementById("courseDetailsBody").innerHTML = "";//get table body by id
+            pre_FeeType = feeType;//assign value which used has selected previously
+            for (let i = 0; i < response.courses.length; i++) {//loop through the courses
                 //make it blank 
                 entryRequirement = "";
-
+                // assign course level values
                 if (response.courses[i].level === "Postgraduate") {
 
                     text2 = "Msc"
@@ -142,8 +83,13 @@ function getDetails(response) {
                 }
                 //check for entry requirements
                 for (let x = 0; x < response.courses[i].entry_requirements.length; x++) {
-                    entryRequirement+='<p>- ' + response.courses[i].entry_requirements[x] + '</p>';
+                    entryRequirement+='<p>- ' + response.courses[i].entry_requirements[x] + '</p>';// assign each requirements inside <p> element
                 }
+                /*get all details in json file assign those values to each rows
+                the row has been desigined to include divs
+                its include 3 divs
+                one to hold the image
+                second one to hold the course details and third one to hold the entry requirements*/
                 html += '<tr><td><div class="row">';
                 html += '<div class="course_icon"><img src="' + response.courses[i].image + '" alt="course_icon" class="icon"></div>';
                 html += '<div class="details">';
@@ -152,7 +98,9 @@ function getDetails(response) {
                 html += '<ul class="categories">';
                 html += '<li><span class="icon_cat"><img src="assets/degree.png" alt="degree_icon" class="small_icon"><label>' + response.courses[i].level + '</label></span></li>';
                 html += '<li><span class="icon_cat"><img src="assets/trophy.png" alt="trophy_icon" class="small_icon"><label>' + text2 + '</label></span></li>';
-                html += '<li><span class="icon_cat"><label>' + 'Fees:- ' + '</label><label>' + response.courses[i].fees[feeType] + '</label></span></li>';
+                html += '<li><span class="icon_cat"><label>' + 'Fees:- ' + '</label><label>' + response.courses[i].fees[feeType] + '</label></span></li>';//based on Feetype variable it will chnage
+                html += '<li><span class="icon_cat"><label>' + 'Duration:- ' + '</label><label>' + response.courses[i].duration + '</label></span></li>';
+                html += '<li><span class="icon_cat"><label>' + 'Location:- ' + '</label><label>' + response.courses[i].location.name + '</label></span></li>';
                 html += '<li><span class="icon_cat"><label>' + 'Number of modules:- ' + '</label><label>' + response.courses[i].modules.length + '</label></span></li>';
                 html += '</ul>';
                 html += '<div class="entryRequirements">';
@@ -160,31 +108,30 @@ function getDetails(response) {
                 html += entryRequirement;
                 html +='</div></td></tr>'
             }
-
+            //assign the table htm body value to the id
             document.getElementById("courseDetailsBody").innerHTML = html;
-            // Initial display of table rows and pagination links
+            
         }
 
     });
 }
 
-//validate currencies
-//get currency value
+//function to decide which radio button user has selected
 $(document).ready(function ()  {
     $("#rd_btn_1,#rd_btn_2,#rd_btn_3").change(function (e) {
-        if ($("#rd_btn_1").prop("checked")) {
+        if ($("#rd_btn_1").prop("checked")) {//if radio button 1 means user selected UK
             feeType = "UK"
             console.log("UK");
         };
-        if ($("#rd_btn_2").prop("checked")) {
+        if ($("#rd_btn_2").prop("checked")) {//if radio button 1 means user selected EURO
             feeType = "EURO"
             console.log("EURO");
         };
-        if ($("#rd_btn_3").prop("checked")) {
+        if ($("#rd_btn_3").prop("checked")) {//if radio button 1 means user selected US
             feeType = "US";
             console.log("US");
         };
-
+        //after user selcted the currency call getDetails function to update table body
         getDetails(jsonVal);
     })
 })
@@ -198,20 +145,20 @@ $(document).ready(function () {
     $("#option1,#option2").change(function (e) {
         //check for post graduate records
         if ($("#option1").prop("checked") && $("#option2").prop("checked") != true) {
-
+            //get how many rows has been there
             const rows = document.querySelectorAll('#course_Tbl>tbody>tr')
 
             //loop through rows
             rows.forEach((row) => {
-
+                // get the value from the each row inside details div under un orderd list first child label value
                 const labelval = row.querySelector('td>div.row>div.details>ul.categories>li:first-child>span.icon_cat>label');
                 if (labelval.textContent === "Postgraduate") {
-                    diplayrow = true;
+                    diplayrow = true;//if its Postgraduate assign displayrow value as true
                 }
                 else {
-                    diplayrow = false;
+                    diplayrow = false;//if its not Postgraduate assign displayrow value as false
                 };
-                displayRow(diplayrow, row);
+                displayRow(diplayrow, row);//call displayRow function to do the display action
             })
         }
 
@@ -221,29 +168,29 @@ $(document).ready(function () {
 
             //loop through rows
             rows.forEach((row) => {
-
+                // get the value from the each row inside details div under un orderd list first child label value
                 const labelval = row.querySelector('td>div.row>div.details>ul.categories>li:first-child>span.icon_cat>label');
                 if (labelval.textContent === "Undergraduate") {
-                    diplayrow = true;
+                    diplayrow = true;//if its Undergraduate assign displayrow value as true
                 }
                 else {
-                    diplayrow = false;
+                    diplayrow = false;//if its not Undergraduate assign displayrow value as false
                 };
-                displayRow(diplayrow, row);
+                displayRow(diplayrow, row);//call displayRow function to do the display action
             })
         }
 
-        //if both are selected and both are un selected
+        //if both are selected and both are un selected display all the rows
         if (($("#option1").prop("checked") && $("#option2").prop("checked")) || ($("#option1").prop("checked") != true && $("#option2").prop("checked") != true)) {
             const rows = document.querySelectorAll('#course_Tbl>tbody>tr')
 
             //loop through rows and display all
             rows.forEach((row) => {
 
-                diplayrow = true;
+                diplayrow = true;//assign displayrow value as true to display all the rows
 
 
-                displayRow(diplayrow, row);
+                displayRow(diplayrow, row);//call displayRow function to do the display action
             })
         }
 
@@ -257,10 +204,10 @@ $(document).ready(function () {
 function displayRow(diplayrow, row) {
     //display row or not
     if (diplayrow) {
-        row.style.display = "table-row"
+        row.style.display = "table-row"//make the row style to display
         console.log("true");
     } else {
-        row.style.display = "none"
+        row.style.display = "none"//make the row style to none
         console.log("false");
     }
 }

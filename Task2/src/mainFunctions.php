@@ -1,15 +1,15 @@
 <?php
 // Set the content type to JSON
 header('Content-Type: application/json');
-
+//rquire functions.php
 require_once './PDO/functions.php';
 $response = array();
-
+//if submit button is clicked
 if(isset($_POST['btn'])) {
-    $btnValue = $_POST['btn'];
+    $btnValue = $_POST['btn'];//get the value
 
-    if($btnValue==="Add Course"){
-        addNewCourse();
+    if($btnValue==="Add Course"){//if the value of button is Add Course
+        addNewCourse();//call addNewCourse function
     }
 }
 
@@ -29,10 +29,10 @@ function addNewCourse(){
       //check whether with same name course exist or not
     $result=fetchARecordWithOneWhereClause("course_tbl","title",$_POST['title']);
     
-      if($result){
+      if($result){//if course already exist
         //navigate to newCourse.php
         session_start();
-        $_SESSION['error'] = "course already exist ".$_POST['title'];
+        $_SESSION['error'] = "course already exist ".$_POST['title'];//set error message
         header('Location: newCourse.php');
         exit;
       }
@@ -56,12 +56,13 @@ function addNewCourse(){
                     "credit"=>$credit        
                 ];
                 $moduleResult=insert("modules_tbl",$data);
+                //if modules not added successfully delete the inserted course
                 if($moduleResult!=true){
                     //delete course details
                     deleteRecord("course_tbl","id",$courseId);
                     //navigate to newCourse.php
                     session_start();
-                    $_SESSION['error'] = "unable to insert modules";
+                    $_SESSION['error'] = "unable to insert modules";//set error message
                     header('Location: newCourse.php');
                     exit;
                 }
@@ -79,12 +80,13 @@ function addNewCourse(){
                     "requirements" => $requirement                  
                 ];
                 $requirementResult=insert("entry_req_tbl",$data);
+                //if requirement not added successfully delete the inserted course
                 if($requirementResult!=true){
                     //delete course details
                     deleteRecord("course_tbl","id",$courseId);
                     //navigate to newCourse.php
                     session_start();
-                    $_SESSION['error'] = "unable to insert entry requirements";
+                    $_SESSION['error'] = "unable to insert entry requirements";//set error message
                     header('Location: newCourse.php');
                     exit;
                 }
@@ -132,23 +134,23 @@ function addNewCourse(){
 
 }
 
-//select which function to execute
+//select which function to execute based on action
 if (isset($_POST['action'])) {
     switch ($_POST['action']) {
-        case 'allCourses':
+        case 'allCourses'://if its all courses call allCourses function
             allCourses();
             
             break;
-        case 'getModules':
+        case 'getModules'://if its get modules call getModules function with courseid parameter
             $courseid = $_POST['courseid'];
             getModules($courseid);
             break;
         case 'getRequirements':
-            $courseid = $_POST['courseid'];
+            $courseid = $_POST['courseid'];//if its get requirements call getRequirements function with courseid parameter
             getRequirements($courseid);
             break;
         case 'deletCourse':
-            $courseid = $_POST['courseid'];
+            $courseid = $_POST['courseid'];//if its deleteCourse call getModules function with courseid parameter
             deletCourse($courseid);
             break;
         }
@@ -157,9 +159,9 @@ if (isset($_POST['action'])) {
 
 //get all course details
 function allCourses(){
-    //get course details
+    //get all course details from the table course_tbl
     $result=fetchAllRecordsWithFetchAll("course_tbl");
-    $jsonResult = json_encode($result);
+    $jsonResult = json_encode($result);//encode is as json string
 
 
    echo $jsonResult;
@@ -167,8 +169,9 @@ function allCourses(){
 
 //get modules
 function getModules($courseId){
+    //get the modules from the modules_tbl where course_id = $courseId
     $result=fetchARecordWithOneWhereClause("modules_tbl","course_id",$courseId);
-    $jsonResult = json_encode($result);
+    $jsonResult = json_encode($result);//encode is as json string
 
 
    echo $jsonResult;
@@ -176,8 +179,9 @@ function getModules($courseId){
 
 //get requirements
 function getRequirements($courseId){
+    //get the requirements from the entry_req_tbl where course_id = $courseId
     $result=fetchARecordWithOneWhereClause("entry_req_tbl","course_id",$courseId);
-    $jsonResult = json_encode($result);
+    $jsonResult = json_encode($result);//encode is as json string
 
 
    echo $jsonResult;
@@ -185,7 +189,8 @@ function getRequirements($courseId){
 
 //delete Course
 function deleteCourse($courseId){
-    $result=deleteRecord("course_tbl","id",$courseId);
+    //delete the course record from the course_tbl where course_id = $courseId
+    $result=deleteRecord("course_tbl","id",$courseId);//encode is as json string
     return $result;
 }
 ?>

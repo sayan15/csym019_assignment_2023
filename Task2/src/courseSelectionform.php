@@ -1,10 +1,10 @@
 <?php
-    session_start();
-    if(isset($_SESSION['userData'])){
+    session_start();//start the session
+    if(isset($_SESSION['userData'])){//user data has been set load the page
                     
         //load the page
     }
-    else{
+    else{//else navigate to login page
         header('Location: login.php');
         exit;
     }
@@ -68,4 +68,18 @@
         <footer>&copy; CSYM019 2023</footer>
     </body>
 </html>
+
+<?php
+    if (isset($_SESSION['deletesuccess'])) {
+        $Message = $_SESSION['deletesuccess'];
+        if($Message){
+            echo "<script>alert('Course deleted successfully');</script>";
+        }
+        else{
+            echo "<script>alert('Unable to delete the course at the moment');</script>";
+        }
+        
+        unset($_SESSION['deletesuccess']); // Clear the session variable after displaying the alert
+    }
+?>
 

@@ -329,11 +329,19 @@ select {
     align-items: center;
   }
   
+  ul {
+    list-style: none;
+    
+  }
   
   .details li {
     display: block; /* display li elements side-by-side */
-    margin-right: 30px; /* add spacing between li elements */
+    margin-right: 10px; /* add spacing between li elements */
     align-items: center;
+    box-shadow:0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    background-color: #fdffff;
+    border-radius: 5px;
   }
 
   .small_icon{

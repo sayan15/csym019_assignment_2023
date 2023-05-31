@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="message"><?php
                          // Receiving data
                         if(isset( $_SESSION['error'])){
-                    
+                            //if there is error meessge is set echo the error message inside label
                             echo("Username or Password is not valid!");
                         }
 
