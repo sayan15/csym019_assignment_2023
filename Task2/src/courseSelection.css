@@ -93,6 +93,7 @@ td{
     padding: 0.2rem 1rem;
     text-align: center;
     color: white;
+    cursor: pointer;
 }
 
 tr:nth-child(even){

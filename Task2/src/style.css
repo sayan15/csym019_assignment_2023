@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url("assets/loginimage.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
