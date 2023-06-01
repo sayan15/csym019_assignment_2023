@@ -40,7 +40,10 @@
                             <table id="course_Tbl">
                                 <thead>
                                     <tr>
-                                        <th>Checkbox</th>
+                                        <th style="display: flex; align-items: center; width:200px;">
+                                            <input type="checkbox" id="selectAll" onclick="selectUnselctCheckboxes()" style="margin-right: 5px;">
+                                            <label for="selectAll">Select All</label>
+                                        </th>
                                         <th>Title</th>
                                         <th>Level</th>
                                         <th>Overview</th>
@@ -49,6 +52,7 @@
                                         <th>Fees Uk</th>
                                         <th>Fees International</th>
                                         <th>Entry Requirements</th>
+                                        <th>Update</th>
                                         <th>Delete</th>
                                         <!-- Add more columns as needed -->
                                     </tr>
@@ -64,8 +68,24 @@
                     </div>
                            
                 </form>
+                <div id="popup-container">
+                    <div id="details">
+                        <input type="text" id="courseTitle" placeholder="title" required></input>
+                        <textarea id="overview" name="overview" rows="4" cols="30" required></textarea>
+                        <input type="text" id="level" placeholder="level" required></input>
+                        <input type="text" id="month" placeholder="month" required></input>
+                        <input type="text" id="location" placeholder="location" required></input>
+                        <input type="text" id="UK" placeholder="uk fee" required></input>
+                        <input type="text" id="International" placeholder="internatinal fee" required></input>
+                    </div>
+                    <div class="pop_up_btn_container">    
+                        <button class="edit" id="submit-button">Submit</button>
+                        <button class="edit" id="close-button">Close</button>  
+                    </div> 
+                </div>
         </main>
         <footer>&copy; CSYM019 2023</footer>
+
     </body>
 </html>
 

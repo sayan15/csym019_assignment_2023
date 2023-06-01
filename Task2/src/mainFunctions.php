@@ -153,6 +153,22 @@ if (isset($_POST['action'])) {
             $courseid = $_POST['courseid'];//if its deleteCourse call getModules function with courseid parameter
             deletCourse($courseid);
             break;
+        case 'specificCourse':
+                $courseid = $_POST['courseid'];//if its get course details call specificCourse function with courseid parameter
+                specificCourse($courseid);
+            break;
+        case 'updateCourse':
+            $courseid = $_POST['courseid'];//if its get course details call specificCourse function with courseid parameter
+            $data=[
+                "title"=>$_POST["title"],
+                "overview"=>$_POST["overview"],
+                "type"=>$_POST["type"],
+                "start_month"=>$_POST["start_month"],
+                "fees_UK"=>$_POST["fees_UK"],
+                "fees_international"=>$_POST["fees_international"]
+            ];
+            updateCourse($data,$courseid);
+            break;
         }
         
 }
@@ -161,6 +177,16 @@ if (isset($_POST['action'])) {
 function allCourses(){
     //get all course details from the table course_tbl
     $result=fetchAllRecordsWithFetchAll("course_tbl");
+    $jsonResult = json_encode($result);//encode is as json string
+
+
+   echo $jsonResult;
+}
+
+//get specific course details
+function specificCourse($courseId){
+    //get specific course details from the table course_tbl
+    $result=fetchARecordWithOneWhereClause("course_tbl","id",$courseId);
     $jsonResult = json_encode($result);//encode is as json string
 
 
@@ -192,5 +218,16 @@ function deleteCourse($courseId){
     //delete the course record from the course_tbl where course_id = $courseId
     $result=deleteRecord("course_tbl","id",$courseId);//encode is as json string
     return $result;
+}
+
+//update Course
+function updateCourse($data, $id){
+    //update the course record from the course_tbl where course_id = $courseId
+    $result=update("course_tbl",$data,$id,"id");//encode is as json string
+    if($result){
+        echo true;//return true if its successfully updated
+    }else{
+        echo false;//return false if its un successfully updated
+    };
 }
 ?>

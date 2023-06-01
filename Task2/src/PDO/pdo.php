@@ -115,7 +115,24 @@ function passwordVerify($inputPass,$hashPass){
   return password_verify($inputPass,$hashPass);
 }
 
+//update table value with where clause
+function update ($table, $data, $id, $whereClause)
+{
+    $setPart = array();
+    $bindings = array();
 
+    foreach ($data as $key => $value)
+    {
+        $setPart[] = "{$key} = '{$value}'";
+    }
+
+
+    $sql = "UPDATE {$table} SET ".implode(', ', $setPart)." WHERE $whereClause = $id ";
+    $stmt = $GLOBALS['pdo']->prepare($sql);
+
+    $stmt->execute($bindings);
+    return $stmt;
+}
 
 
   ?>
