@@ -13,7 +13,7 @@ main{
 }
 
 .table-container {
-    max-height: 400px; /* Set the maximum height of the table container */
+    max-height: 600px; /* Set the maximum height of the table container */
     overflow-y: auto; /* Enable vertical scrolling */
     justify-content: center;
     align-items: center;

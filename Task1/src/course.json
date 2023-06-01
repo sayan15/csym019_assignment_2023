@@ -689,9 +689,9 @@
             "distance": false
             },
             "fees": {
-            "UK": "£9,250",
-            "EU": "£13,750",
-            "International": "£13,750"
+                "UK": "£11,500",
+                "US": "$14,300",
+                "EURO": "€12,800"
             },
             "details": "The Animation BA (Hons) program provides students with the knowledge and skills to excel in the field of animation. Through a combination of practical projects and theoretical studies, students learn various animation techniques, including 2D and 3D animation, stop motion, and digital effects. They develop a strong foundation in storytelling, character design, and animation principles. The course also covers industry-standard software and tools used in animation production. Students have access to state-of-the-art facilities and collaborate on projects to build their portfolio. Graduates can pursue careers in animation studios, film production companies, advertising agencies, and game development.",
             "modules": [
