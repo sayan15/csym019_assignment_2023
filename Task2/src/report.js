@@ -29,8 +29,8 @@ $(document).ready(function () {
                     //create table body
                     html += '<td>' + response[i].title + '</td>';
                     html += '<td>' + response[i].overview + '</td>';
-                    html += '<td>' + response[i].higlights + '</td>';
-                    html += '<td>' + response[i].details + '</td>';
+                    html += '<td>' + response[i].location + '</td>';
+                    html += '<td>' + response[i].start_month + '</td>';
                     html += '<td>' + response[i].fees_UK + '</td>';
                     html += '<td>' + response[i].fees_international + '</td></tr>';
 

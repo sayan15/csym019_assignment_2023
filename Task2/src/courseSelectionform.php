@@ -44,8 +44,8 @@
                                         <th>Title</th>
                                         <th>Level</th>
                                         <th>Overview</th>
-                                        <th>Higlights</th>
-                                        <th>Details</th>
+                                        <th>Location</th>
+                                        <th>Month</th>
                                         <th>Fees Uk</th>
                                         <th>Fees International</th>
                                         <th>Entry Requirements</th>

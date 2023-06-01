@@ -16,10 +16,16 @@
             // process selected courses
             $checkboxs = $_POST['checkbox'];//get the selected values 
             $courseIds=array();//create array variable
-             // Loop through the arrays to access the values
-             for ($i = 0; $i <count($checkboxs); $i++) {
-                $courseIds[$i]=$checkboxs[$i];//assign values to the variable
-             }
+            if(is_array($checkboxs)>0){
+                // Loop through the arrays to access the values
+                for ($i = 0; $i <count($checkboxs); $i++) {
+                    $courseIds[$i]=$checkboxs[$i];//assign values to the variable
+                }
+            }
+            else{
+                header('Location: courseSelectionForm.php');//else navigate to courseSelection page
+                exit;
+            }
 
         }
     }else if(isset($_POST['course_delete'])){//check if the delete buttton has been clicked
@@ -63,8 +69,8 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Overview</th>
-                                <th>Higlights</th>
-                                <th>Details</th>
+                                <th>Location</th>
+                                <th>Month</th>
                                 <th>Fees Uk</th>
                                 <th>Fees International</th>
                             </tr>

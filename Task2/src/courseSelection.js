@@ -71,11 +71,11 @@ function getDetails(response) {
             });
             //create table body
             html += '<tr><td><input type="checkbox" name="checkbox[]" value="' + response[i].id + '"></td>';
-            html += '<td>' + response[i].title + '</td>';
+            html += '<td><div class="table-cell-title">' + response[i].title + '</td>';
             html += '<td>' + response[i].type + '</td>';
             html += '<td ><div class="table-cell">' + response[i].overview + '</div></td>';
-            html += '<td >' + response[i].higlights + '</td>';
-            html += '<td >' + response[i].details + '</td>';
+            html += '<td >' + response[i].location + '</td>';
+            html += '<td >' + response[i].start_month + '</td>';
             html += '<td >' + response[i].fees_UK + '</td>';
             html += '<td >' + response[i].fees_international + '</td>';
             html += '<td <div class="table-cell" id="req-' + response[i].id + '"><ul>' + requirements + '</ul></td>';

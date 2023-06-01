@@ -58,15 +58,26 @@
                         </label>
                     </div>
                     <div class="inner_Blocks">
-                        <label for="heighlights">Heighlights:</label>
-                        <textarea id="heighlights" name="heighlights" rows="4" cols="30" required></textarea>
+                        <label for="level">Location:</label>
+                        <label>
+                            <input type="radio" name="location" value="Waterside" id="location_rd_btn_1" checked>
+                            Waterside
+                        </label>
+                        <label>
+                            <input type="radio" name="location" value="online" id="location_rd_btn_2">
+                            online
+                        </label>
+                    </div>
+                    <div class="inner_Blocks">
+                        <label for="selectMonth">Starting Month:</label>
+                        <select id="selectMonth" name="selectMonth">
+                            <option value="January">January</option>
+                            <option value="April">April</option>
+                            <option value="Septemper">Septemper</option>
+                        </select>
                     </div>
                     <div class="inner_Blocks_col">
                         <label>Course Contents:</label><br>
-                        <div class="inner_Blocks_content">
-                            <label for="course_details">- Course details:</label><br>
-                            <textarea id="course_details" name="course_details" rows="4" cols="30" required></textarea>
-                        </div>
                         <div id="modulesContainer">
                             <div class="inner_Blocks_content">
                                 <label for="module">- Modules:</label><br>

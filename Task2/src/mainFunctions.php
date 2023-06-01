@@ -19,8 +19,8 @@ function addNewCourse(){
     $data = [
         "title" => $_POST['title'],
         "overview"=>$_POST['overview'],	
-        "higlights"	=>$_POST['heighlights'],	
-        "details"	=>$_POST['course_details'],	    		
+        "location"	=>$_POST['location'],	
+        "start_month"	=>$_POST['selectMonth'],	    		
         "fees_UK"=>$_POST['uk'],	
         "fees_international"=>$_POST['international'],
         "type"=> $_POST['level']

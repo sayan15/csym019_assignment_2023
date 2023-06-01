@@ -43,6 +43,27 @@ td{
     padding: 1rem 2rem;
 }
 
+.table-cell-title {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 50px; /* Initial height */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    transition: width 0.3s, height 0.3s; /* Add transition for smooth animation */
+  }
+
+  .table-cell-title:hover {
+    z-index: 1;
+  width: 300px;
+  height: auto;
+  background-color: #9be6f73a;
+  overflow: visible;
+  white-space: normal;
+}
+
 .table-cell {
   display: inline-block;
   position: relative;
@@ -51,9 +72,10 @@ td{
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  vertical-align: top;
   transition: width 0.3s, height 0.3s; /* Add transition for smooth animation */
 }
+
+
 
 .table-cell:hover {
     z-index: 1;
